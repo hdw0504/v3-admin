@@ -42,8 +42,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       // 代理跨域（mock 不需要配置跨域，直接能访问，这里只是个示例）
       proxy: {
         '/api': {
-          // target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
-          target: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e', // easymock
+          target: 'https://mock.mengxuegu.com/mock/637490488ccc0e26d1d3c302/geek-admin',
+          // target: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, ''),
         },
@@ -52,7 +52,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       Vue({
         // 响应式语法糖
-        // reactivityTransform: true,
+        reactivityTransform: true,
       }),
       // https://www.jianshu.com/p/77cceaaa4723
       createHtmlPlugin({
@@ -80,7 +80,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         algorithm: 'gzip',
         ext: '.gz',
       }),
-      // name 可以写在 script 标签上
+      /**
+       * name 可以写在 script 标签上
+       * 当项目使用 keep-alive 时，可搭配组件name进行缓存过滤
+       * DOM 做递归组件时需要
+       * vue-devtools 调试工具里显示的组见名称是由 vue 中组件 name 决定的
+       * */
+
+      //
       VueSetupExtend(),
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
