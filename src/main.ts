@@ -28,7 +28,7 @@ import router from '@/routers/index'
 // vue i18n
 // import I18n from "@/languages/index";
 // pinia store
-// import pinia from "@/stores/index";
+import pinia from '@/stores/index'
 // svg icons
 import 'virtual:svg-icons-register'
 // errorHandler
@@ -46,4 +46,4 @@ Object.entries(Icons).forEach(([key, component]) => {
   app.component(key, component)
 })
 
-app.use(router).use(directives).use(ElementPlus).mount('#app')
+app.use(router).use(pinia).use(directives).use(ElementPlus).mount('#app')
