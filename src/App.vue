@@ -1,16 +1,15 @@
 <script setup lang="ts">
 // import zhCn from 'element-plus/es/locale/lang/zh-cn'
 // import en from 'element-plus/es/locale/lang/en'
+import { storeToRefs } from 'pinia'
 import { GlobalStore } from '@/stores'
 
-const globalStore = GlobalStore()
-// 配置element按钮文字中间是否有空格
+// 配置全局组件大小 (small/default(medium)/large)
+const { assemblySize } = storeToRefs(GlobalStore())
+// // 配置element按钮文字中间是否有空格
 const config = reactive({
   autoInsertSpace: false,
 })
-
-// 配置全局组件大小 (small/default(medium)/large)
-const assemblySize = computed((): string => globalStore.assemblySize)
 </script>
 
 <template>
@@ -25,3 +24,7 @@ const assemblySize = computed((): string => globalStore.assemblySize)
     </suspense>
   </el-config-provider>
 </template>
+
+<style lang="scss">
+  @import '@/styles/root.scss'
+</style>
