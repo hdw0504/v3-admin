@@ -4,12 +4,14 @@ import {
   presetIcons,
   presetUno,
   presetWebFonts,
+  transformerDirectives,
   // transformerDirectives,
   // transformerVariantGroup,
 } from 'unocss'
 
 export default defineConfig({
   shortcuts: {
+    'h-header': 'h-55px!',
     'color-fade': 'text-gray-900:50 dark:text-gray-300:50',
     'img-resize': 'resize max-w-full h-auto',
   },
@@ -28,8 +30,8 @@ export default defineConfig({
       },
     }),
   ],
-  // transformers: [
-  //   transformerDirectives(),
-  //   transformerVariantGroup(),
-  // ],
+  transformers: [
+    transformerDirectives({ enforce: 'pre' }),
+    // transformerVariantGroup(),
+  ],
 })
