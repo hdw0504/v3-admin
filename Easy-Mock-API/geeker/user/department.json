@@ -1,0 +1,82 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return 200
+    } else {
+      return 599;
+    }
+  },
+  "data": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return [{
+        id: "1",
+        name: "华东分部",
+        children: [{
+          id: "11",
+          name: "研发部"
+        }, {
+          id: "12",
+          name: "市场部"
+        }, {
+          id: "13",
+          name: "商务部"
+        }, {
+          id: "14",
+          name: "财务部"
+        }]
+      }, {
+        id: "2",
+        name: "华南分部",
+        children: [{
+          id: "21",
+          name: "研发部"
+        }, {
+          id: "22",
+          name: "市场部"
+        }, {
+          id: "23",
+          name: "商务部"
+        }, {
+          id: "24",
+          name: "财务部"
+        }]
+      }, {
+        id: "3",
+        name: "西北分部",
+        children: [{
+          id: "31",
+          name: "研发部"
+        }, {
+          id: "32",
+          name: "市场部"
+        }, {
+          id: "33",
+          name: "商务部"
+        }, {
+          id: "34",
+          name: "财务部"
+        }]
+      }]
+    }
+    return null
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return '成功'
+    } else {
+      return '登录失效';
+    }
+  },
+}

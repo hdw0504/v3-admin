@@ -1,0 +1,24 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (typeof body.id == 'string' && body.status == 0 || 1) {
+      return 200
+    } else {
+      return 500
+    }
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (typeof body.id == 'string' && body.status == 0 || 1) {
+      return "切换用户状态成功"
+    } else {
+      return '切换用户状态失败'
+    }
+  },
+}

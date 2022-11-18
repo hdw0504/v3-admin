@@ -1,0 +1,42 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return 200
+    } else {
+      return 599;
+    }
+  },
+  "data": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return [{
+          genderLabel: "男",
+          genderValue: 1,
+        },
+        {
+          genderLabel: "女",
+          genderValue: 2
+        }
+      ]
+    }
+    return null
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return '成功'
+    } else {
+      return '登录失效';
+    }
+  },
+}

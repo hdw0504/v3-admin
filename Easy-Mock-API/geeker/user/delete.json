@@ -1,0 +1,24 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (Array.isArray(body.id) && body.id.length !== 0) {
+      return 200
+    } else {
+      return 500
+    }
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (Array.isArray(body.id) && body.id.length !== 0) {
+      return "删除用户成功"
+    } else {
+      return '删除用户失败'
+    }
+  },
+}

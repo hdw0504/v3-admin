@@ -1,0 +1,37 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (body) {
+      return 200
+    } else {
+      return 500
+    }
+  },
+  "data": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (body) {
+      return Mock.mock({
+        'fileUrl|1': ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728112848.mp4"]
+      })
+    } else {
+      return {}
+    }
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let body = _req.body;
+    if (body) {
+      return "视频上传成功！"
+    } else {
+      return "视频上传失败！"
+    }
+  },
+}

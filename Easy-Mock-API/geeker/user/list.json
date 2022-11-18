@@ -1,0 +1,102 @@
+{
+  "code": 200,
+  "data": function({
+    _req,
+    Mock
+  }) {
+    let query = _req.body;
+    if (query.username || query.gender || query.idCard || query.email || query.status !== undefined) {
+      return Mock.mock({
+        "datalist|10": [{
+          "id": "@string(number,20)",
+          "username": query.username ? query.username : "@cname",
+          "gender": query.gender ? query.gender : "@integer(1, 2)",
+          "age|15-30": 1,
+          "idCard": query.idCard ? query.idCard : "@id",
+          "email": query.email ? query.email : "@email",
+          "address": "@city(true)",
+          "createTime": "@date @time",
+          "status": query.status !== undefined ? query.status : "@integer(0, 1)",
+          "avatar|1": ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110013.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110015.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110012.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110032.jpg"]
+        }],
+        "pageNum": Number(query.pageNum),
+        "pageSize": Number(query.pageSize),
+        "total": 18
+      })
+    } else if (query.pageSize == 25) {
+      return Mock.mock({
+        "datalist|25": [{
+          "id": "@string(number,20)",
+          "username": query.username ? query.username : "@cname",
+          "gender": query.gender ? query.gender : "@integer(1, 2)",
+          "age|15-30": 1,
+          "idCard": query.idCard ? query.idCard : "@id",
+          "email": query.email ? query.email : "@email",
+          "address": "@city(true)",
+          "createTime": "@date @time",
+          "status": query.status !== undefined ? query.status : "@integer(0, 1)",
+          "avatar|1": ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110013.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110015.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110012.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110032.jpg"]
+        }],
+        "pageNum": Number(query.pageNum),
+        "pageSize": Number(query.pageSize),
+        "total": 2000
+      })
+    } else if (query.pageSize == 50) {
+      return Mock.mock({
+        "datalist|50": [{
+          "id": "@string(number,20)",
+          "username": query.username ? query.username : "@cname",
+          "gender": query.gender ? query.gender : "@integer(1, 2)",
+          "age|15-30": 1,
+          "idCard": query.idCard ? query.idCard : "@id",
+          "email": query.email ? query.email : "@email",
+          "address": "@city(true)",
+          "createTime": "@date @time",
+          "status": query.status !== undefined ? query.status : "@integer(0, 1)",
+          "avatar|1": ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110013.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110015.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110012.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110032.jpg"]
+        }],
+        "pageNum": Number(query.pageNum),
+        "pageSize": Number(query.pageSize),
+        "total": 2000
+      })
+    } else if (query.pageSize == 100) {
+      return Mock.mock({
+        "datalist|100": [{
+          "id": "@string(number,20)",
+          "username": query.username ? query.username : "@cname",
+          "gender": query.gender ? query.gender : "@integer(1, 2)",
+          "age|15-30": 1,
+          "idCard": query.idCard ? query.idCard : "@id",
+          "email": query.email ? query.email : "@email",
+          "address": "@city(true)",
+          "createTime": "@date @time",
+          "status": query.status !== undefined ? query.status : "@integer(0, 1)",
+          "avatar|1": ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110013.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110015.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110012.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110032.jpg"]
+        }],
+        "pageNum": Number(query.pageNum),
+        "pageSize": Number(query.pageSize),
+        "total": 2000
+      })
+    } else {
+      return Mock.mock({
+        "datalist|10": [{
+          "id": "@string(number,20)",
+          "username": query.username ? query.username : "@cname",
+          "gender": query.gender ? query.gender : "@integer(1, 2)",
+          "age|15-30": 1,
+          "idCard": query.idCard ? query.idCard : "@id",
+          "email": query.email ? query.email : "@email",
+          "address": "@city(true)",
+          "createTime": "@date @time",
+          "status": query.status !== undefined ? query.status : "@integer(0, 1)",
+          "avatar|1": ["https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110013.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110015.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110012.jpg", "https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/img/20220728110032.jpg"]
+        }],
+        "pageNum": Number(query.pageNum),
+        "pageSize": Number(query.pageSize),
+        "total": 2000
+      })
+    }
+
+  },
+  "msg": "成功"
+}

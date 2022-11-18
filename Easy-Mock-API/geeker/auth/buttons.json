@@ -1,0 +1,67 @@
+{
+  "code": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return 200
+    } else {
+      return 599;
+    }
+  },
+  "data": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln') {
+      return {
+        "useHooks": {
+          "add": true,
+          "batchAdd": true,
+          "export": true,
+          "batchDelete": true,
+          "status": true,
+          "view": true,
+          "edit": true,
+          "reset": true,
+          "delete": true,
+        },
+        "useComponent": {
+          "add": true,
+          "batchAdd": true,
+          "export": true,
+          "batchDelete": true,
+          "status": true,
+        }
+      }
+    }
+    if (header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return {
+        "useHooks": {
+          "add": true,
+          "batchDelete": true,
+          "view": true,
+          "edit": true,
+          "reset": true,
+        },
+        "useComponent": {
+          "add": true,
+          "batchDelete": true,
+        }
+      }
+    }
+  },
+  "msg": function({
+    _req,
+    Mock
+  }) {
+    let header = _req.header;
+    if (header['x-access-token'] === 'bqddxxwqmfncffacvbpkuxvwvqrhln' || header['x-access-token'] === 'unufvdotdqxuzfbdygovfmsbftlvbn') {
+      return '成功'
+    } else {
+      return '登录失效';
+    }
+  },
+}
