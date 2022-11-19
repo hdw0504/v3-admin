@@ -83,21 +83,6 @@ html.dark {
 	--w-e-textarea-color: #eeeeee;
 
 	// * 以下为自定义暗黑模式内容
-	// login
-	.login-container {
-		background-color: var(--el-fill-color-extra-light) !important;
-		.login-box {
-			background-color: var(--el-mask-color) !important;
-			.login-form {
-				background-color: var(--el-bg-color) !important;
-				box-shadow: var(--geeker-login-shadow-light) !important;
-				.logo-text {
-					color: var(--el-text-color-primary) !important;
-				}
-			}
-		}
-	}
-
 	// scroll-bar
 	::-webkit-scrollbar {
 		background-color: var(--el-scrollbar-bg-color) !important;

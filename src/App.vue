@@ -26,5 +26,4 @@ const config = reactive({
 </template>
 
 <style lang="scss">
-  @import '@/styles/root.scss'
 </style>

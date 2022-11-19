@@ -1,8 +1,5 @@
 import { createApp } from 'vue'
-// reset style sheet
-import '@/styles/reset.scss'
-// CSS common style sheet
-import '@/styles/common.scss'
+
 // iconfont css
 // import "@/assets/iconfont/iconfont.scss";
 // font css
@@ -11,14 +8,18 @@ import '@/styles/common.scss'
 import ElementPlus from 'element-plus'
 // element icons
 import * as Icons from '@element-plus/icons-vue'
-// element css
-// import 'element-plus/dist/index.css'
-// element dark(内置暗黑模式)
+// element 样式 (内置暗黑模式)
 import 'element-plus/theme-chalk/dark/css-vars.css'
 // custom element dark(自定义暗黑模式)
 import '@/styles/theme/element-dark.scss'
 // custom element css
 import '@/styles/element.scss'
+// reset style sheet
+import '@/styles/reset.scss'
+// CSS common style sheet
+import '@/styles/common.scss'
+// css root var
+import '@/styles/root.scss'
 
 import App from './App.vue'
 // custom directives
