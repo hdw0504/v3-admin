@@ -23,5 +23,5 @@ import { isDark } from '@/composables/dark'
 </template>
 
 <style scoped lang="scss">
-@import './index.scss'
+@import './index.scss';
 </style>
