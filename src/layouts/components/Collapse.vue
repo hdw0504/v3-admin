@@ -10,7 +10,7 @@ const collapse = () => {
 </script>
 
 <template>
-  <el-icon class="m-r-20px text-22px! cursor-pointer" @click="collapse">
+  <el-icon class="m-r-20px text-icon cursor-pointer" @click="collapse">
     <component :is="themeConfig.isCollapse ? 'expand' : 'fold'" />
   </el-icon>
 </template>
