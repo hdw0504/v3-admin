@@ -24,10 +24,11 @@ export interface ThemeConfigProps {
 }
 
 /* GlobalState */
+export type AssemblyList = ['default', 'large', 'small']
 export interface GlobalState {
   token: string
   userInfo: any
-  assemblySize: 'default' | 'large' | 'small'
+  assemblySize: AssemblyList[number]
   language: string
   themeConfig: ThemeConfigProps
 }
