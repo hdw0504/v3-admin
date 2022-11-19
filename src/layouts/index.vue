@@ -1,6 +1,6 @@
 <script setup  lang="ts" name="layout">
 import { storeToRefs } from 'pinia'
-import LayoutVertical from './layoutVertical/index.vue'
+import LayoutVertical from './layoutMode/Vertical.vue'
 import { GlobalStore } from '@/stores'
 
 const LayoutComponents: { [key: string]: any } = {
