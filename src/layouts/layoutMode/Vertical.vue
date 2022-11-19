@@ -1,10 +1,12 @@
 <script setup lang="ts" name="layoutVertical">
 import { storeToRefs } from 'pinia'
+import Footer from '../Footer.vue'
+import Header from '../Header.vue'
+import Main from '../Main.vue'
+import Tabs from '../Tabs.vue'
 import { GlobalStore } from '@/stores'
 import { AuthStore } from '@/stores/modules/auth'
-import ToolBarLeft from '@/layouts/components/Header/ToolBarLeft.vue'
-import ToolBarRight from '@/layouts/components/Header/ToolBarRight.vue'
-import SubMenu from '@/layouts/components/Menu/SubMenu.vue'
+import SubMenu from '@/layouts/components/SubMenu.vue'
 
 const route = useRoute()
 const activeMenu = computed(() => route.path)
@@ -17,11 +19,10 @@ const { getMenuList } = storeToRefs(AuthStore())
 <template>
   <el-container w-full h-full min-w-740px>
     <el-aside w-auto overflow-inherit class="w-auto! bg-[#191a20] b-r b-r-[#191a20] ">
-      <div class="menu" :class="[themeConfig.isCollapse ? 'w-56px' : 'w-210px']">
-        <div flex justify-center items-center box-border h-header class="b-b b-b-[#282a35]">
-          <!-- <img src="@/assets/images/logo.svg" alt="logo" /> -->
-          im logo
-          <span v-show="!themeConfig.isCollapse" class="text-[#dadada]">Geeker Admin</span>
+      <div class="menu" :class="[themeConfig.isCollapse ? 'w-[var(--menu-hide)]' : 'w-[var(--menu-show)]']">
+        <div flex justify-center items-center box-border class="h-[var(--header-height)] b-b b-b-[#282a35]">
+          <img src="@/assets/images/logo.svg" alt="logo">
+          <span v-show="!themeConfig.isCollapse" m-l-2 text-8 font-bold truncate class="text-[#dadada]">wink</span>
         </div>
         <el-scrollbar>
           <el-menu
@@ -35,22 +36,43 @@ const { getMenuList } = storeToRefs(AuthStore())
         </el-scrollbar>
       </div>
     </el-aside>
+
     <el-container>
-      <el-header flex items-center justify-between box-border h-header class="p-x-15px! b-b b-b-[#f1f1f1]">
-        <ToolBarLeft />
-        <ToolBarRight />
+      <el-header>
+        <Header />
       </el-header>
-      main
+
+      <Tabs />
+
+      <el-main>
+        <Main />
+      </el-main>
+
+      <el-footer>
+        <Footer />
+      </el-footer>
     </el-container>
   </el-container>
 </template>
 
 <style lang="scss" scoped>
 .menu{
-  --at-apply: flex flex-col h-full transition-width transition-ease transition-duration-300
+  --at-apply: flex flex-col h-full transition-width transition-ease transition-duration-300;
+  .el-scrollbar {
+    height: calc(100% - 55px);
+  }
 }
-.el-scrollbar {
-  height: calc(100% - 55px);
+.el-header{
+  --at-apply: flex items-center justify-between box-border b-b b-b-[#f1f1f1];
+}
+.el-main{
+  --at-apply: bg-[#f0f2f5] box-border p-10px overflow-x-hidden;
+  &::-webkit-scrollbar {
+    --at-apply: bg-[#f0f2f5];
+  }
+}
+.el-footer{
+  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm b-t b-t-[#e4e7ed];
 }
 :deep(.el-menu-item.is-active) {
   background: #060708;
