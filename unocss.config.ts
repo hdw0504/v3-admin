@@ -10,16 +10,23 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: {
-    'h-header': 'h-55px!',
-    'color-fade': 'text-gray-900:50 dark:text-gray-300:50',
-    'img-resize': 'resize max-w-full h-auto',
-  },
+  shortcuts: [
+    ['text-icon', 'text-1.4em!'],
+    ['color-fade', 'text-gray-900:50 dark:text-gray-300:50'],
+    ['img-resize', 'resize max-w-full h-auto'],
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
+      // cdn: 'https://esm.sh/',
+      // When using bundlers, you can provide the collections using dynamic imports so they will be bundler as async chunk and loaded on demand.
+      collections: {
+        carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default),
+        mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default),
+        // logos: () => import('@iconify-json/logos/icons.json').then(i => i.default),
+      },
+      scale: 1.4,
       warn: true,
     }),
     presetWebFonts({
@@ -31,7 +38,7 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    transformerDirectives({ enforce: 'pre' }),
+    transformerDirectives(),
     // transformerVariantGroup(),
   ],
 })
