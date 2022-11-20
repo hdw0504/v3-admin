@@ -6,8 +6,8 @@ import { LOGIN_URL } from '@/config/config'
 import { AuthStore } from '@/stores/modules/auth'
 import { notFoundRouter } from '@/routers/modules/staticRouter'
 
-// 引入 views 文件夹下所有 vue 文件
-const modules = import.meta.glob('@/views/**/*.vue')
+// 引入 pages 文件夹下所有 vue 文件
+const modules = import.meta.glob('@/pages/**/*.vue')
 
 /**
  * 初始化动态路由
@@ -40,7 +40,7 @@ export const initDynamicRouter = async () => {
       if (item.children)
         delete item.children
       if (item.component)
-        item.component = modules[`/src/views${item.component}.vue`]
+        item.component = modules[`/src/pages${item.component}.vue`]
 
       if (item.meta.isFull)
         router.addRoute(item)

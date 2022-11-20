@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import type { AuthState } from '@/stores/interface'
 import piniaPersistConfig from '@/config/piniaPersist'
 import { getAuthButtonListApi, getAuthMenuListApi } from '@/api/modules/login'
-import { getAllBreadcrumbList, getShowMenuList } from '@/utils/util'
+import { getAllBreadcrumbList, getKeepAliveRouterName, getShowMenuList } from '@/utils/util'
 
 export const AuthStore = defineStore('AuthState', () => {
   // state
@@ -12,6 +12,7 @@ export const AuthStore = defineStore('AuthState', () => {
   // getters
   const getBreadcrumbList = computed(() => getAllBreadcrumbList(authMenuList))
   const getMenuList = computed(() => getShowMenuList(authMenuList))
+  const getKeepAliveRouter = computed(() => getKeepAliveRouterName(authMenuList))
 
   // actions
   // getAuthButtonList
@@ -32,6 +33,7 @@ export const AuthStore = defineStore('AuthState', () => {
     getMenuList,
     getAuthMenuList,
     getAuthButtonList,
+    getKeepAliveRouter,
   }
 }, {
   persist: piniaPersistConfig('AuthState', ['authButtonList']),
