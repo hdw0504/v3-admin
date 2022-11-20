@@ -1,4 +1,3 @@
-import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import router from '@/routers/index'
 import { getFlatArr } from '@/utils/util'

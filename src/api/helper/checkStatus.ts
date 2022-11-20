@@ -1,5 +1,3 @@
-import { ElMessage } from 'element-plus'
-
 /**
  * @description: 校验网络请求状态码
  * @param {Number} status

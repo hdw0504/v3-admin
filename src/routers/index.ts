@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { ElNotification } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { initDynamicRouter } from './modules/dynamicRouter'
 import { staticRouter } from '@/routers/modules/staticRouter'

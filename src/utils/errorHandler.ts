@@ -1,5 +1,3 @@
-import { ElNotification } from 'element-plus'
-
 /**
  * @description 全局代码错误捕捉
  * */

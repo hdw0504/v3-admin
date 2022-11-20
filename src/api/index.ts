@@ -1,6 +1,5 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import axios from 'axios'
-import { ElMessage } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { AxiosCanceler, checkStatus } from './helper'
 import type { ResultData } from './interface'
@@ -34,6 +33,7 @@ const config = {
 class RequestHttp {
   service: AxiosInstance
   public constructor(config: AxiosRequestConfig) {
+    // ElMessage('123')
     // 实例化axios
     this.service = axios.create(config)
 
