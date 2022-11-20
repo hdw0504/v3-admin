@@ -5,6 +5,7 @@ import Breadcrumb from './components/Breadcrumb.vue'
 import AssemblySize from './components/AssemblySize.vue'
 import Fullscreen from './components/Fullscreen.vue'
 import Avatar from './components/Avatar.vue'
+import Dark from './components/Dark.vue'
 import { GlobalStore } from '@/stores'
 
 const { themeConfig } = storeToRefs(GlobalStore())
@@ -18,6 +19,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
   </div>
   <!-- right -->
   <div flex justify-center items-center gap-4 mr-4>
+    <Dark />
     <AssemblySize />
     <!-- <Language /> -->
     <!-- <SearchMenu /> -->
