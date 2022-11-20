@@ -2,14 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
-export function isDevFn(mode: string): boolean {
-  return mode === 'development'
-}
-
-export function isProdFn(mode: string): boolean {
-  return mode === 'production'
-}
-
 /**
  * Whether to generate package preview
  */
