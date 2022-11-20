@@ -94,22 +94,18 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           'vue-router',
           '@vueuse/core',
         ],
-        dts: true,
         dirs: [
           './src/composables',
         ],
+        dts: true,
         vueTemplate: true,
-        resolvers: [
-          ElementPlusResolver(),
-        ],
+        resolvers: [ElementPlusResolver()],
       }),
 
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: true,
-        resolvers: [
-          ElementPlusResolver(),
-        ],
+        resolvers: [ElementPlusResolver()],
       }),
 
       // https://github.com/antfu/unocss
