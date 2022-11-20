@@ -14,7 +14,7 @@ const breadcrumbList = computed(() => {
 </script>
 
 <template>
-  <el-breadcrumb display-none md:display-initial separator-icon="ArrowRight">
+  <el-breadcrumb display-none xl:display-initial separator-icon="ArrowRight">
     <transition-group name="breadcrumb" mode="out-in">
       <el-breadcrumb-item v-if="breadcrumbList[0].meta.title !== '首页'" :key="HOME_URL" :to="{ path: HOME_URL }">
         <div flex items-center>

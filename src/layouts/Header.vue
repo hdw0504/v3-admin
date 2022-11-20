@@ -17,8 +17,8 @@ const { themeConfig } = storeToRefs(GlobalStore())
     <Collapse />
     <Breadcrumb v-if="themeConfig.breadcrumb" />
   </div>
-  <!-- right -->
-  <div flex justify-center items-center gap-4 mr-4>
+  <!-- right 给 loading 腾位置 -->
+  <div flex justify-center items-center gap-4 mr-8>
     <Dark />
     <AssemblySize />
     <!-- <Language /> -->

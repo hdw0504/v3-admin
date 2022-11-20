@@ -63,7 +63,8 @@ const tabRemove = (activeTabPath: string) => {
 
 <style lang="scss" scoped>
 :deep(.el-tabs){
-  width: calc(100% - 70px);
+  // 按钮 64px
+  width: calc(100% - 79px);
    .el-tabs__header{
   --at-apply: box-border  m-0 p-x-10px b-none;
   .el-tabs__nav{
