@@ -1,12 +1,6 @@
 <script setup lang="ts" name="login">
 import LoginForm from './components/LoginForm.vue'
 import { isDark } from '@/composables/dark'
-
-// 解决 unplugin-auto-import 在加载登录页的时候并未注册 ElMessage 和 ElNotification
-if (!ElMessage || !ElNotification) {
-  ElMessage.closeAll()
-  ElNotification.closeAll()
-}
 </script>
 
 <template>
