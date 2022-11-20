@@ -6,24 +6,24 @@ import { getAllBreadcrumbList, getKeepAliveRouterName, getShowMenuList } from '@
 
 export const AuthStore = defineStore('AuthState', () => {
   // state
-  const authButtonList = reactive<AuthState['authButtonList']>({})
-  const authMenuList = reactive<AuthState['authMenuList']>([])
+  const authButtonList = ref<AuthState['authButtonList']>({})
+  const authMenuList = ref<AuthState['authMenuList']>([])
 
   // getters
-  const getBreadcrumbList = computed(() => getAllBreadcrumbList(authMenuList))
-  const getMenuList = computed(() => getShowMenuList(authMenuList))
-  const getKeepAliveRouter = computed(() => getKeepAliveRouterName(authMenuList))
+  const getBreadcrumbList = computed(() => getAllBreadcrumbList(authMenuList.value))
+  const getMenuList = computed(() => getShowMenuList(authMenuList.value))
+  const getKeepAliveRouter = computed(() => getKeepAliveRouterName(authMenuList.value))
 
   // actions
   // getAuthButtonList
   const getAuthButtonList = async () => {
     const { data } = await getAuthButtonListApi()
-    Object.assign(authButtonList, data)
+    authButtonList.value = data
   }
   // getAuthMenuList
   const getAuthMenuList = async () => {
     const { data } = await getAuthMenuListApi()
-    authMenuList.push(...data)
+    authMenuList.value = data
   }
 
   return {
