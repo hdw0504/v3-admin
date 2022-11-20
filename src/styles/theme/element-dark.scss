@@ -117,68 +117,6 @@ html.dark {
 			}
 		}
 	}
-
-	// layout
-	.el-container {
-		.el-aside {
-			background-color: var(--el-bg-color) !important;
-			border-right: var(--geeker-border-light) !important;
-			.logo {
-				border-bottom: var(--geeker-border-light) !important;
-			}
-		}
-		.not-aside {
-			border-right: none !important;
-		}
-		.el-header {
-			background-color: var(--el-bg-color) !important;
-			border-bottom-color: var(--el-border-color-light) !important;
-		}
-		.el-main {
-			background-color: var(--geeker-main-bg-color) !important;
-			.card {
-				background-color: var(--el-bg-color) !important;
-			}
-		}
-		.el-tabs {
-			background-color: var(--el-bg-color) !important;
-		}
-		.el-footer {
-			.footer {
-				background-color: var(--el-bg-color) !important;
-				border-top-color: var(--el-border-color-light) !important;
-				a {
-					color: var(--el-text-color-regular) !important;
-				}
-			}
-		}
-	}
-
-	// menu
-	.el-menu,
-	.el-sub-menu,
-	.el-menu-item,
-	.el-sub-menu__title {
-		background-color: var(--el-bg-color) !important;
-		&:not(.is-active) {
-			color: #bdbdc0 !important;
-		}
-		&.is-active {
-			color: #ffffff !important;
-			background-color: #060708 !important;
-		}
-	}
-	.el-menu-item:not(.is-active):hover {
-		background-color: var(--geeker-main-bg-color) !important;
-	}
-	.aside-split {
-		background-color: var(--el-bg-color) !important;
-		border-right: var(--geeker-border-light) !important;
-		.logo {
-			border-bottom: var(--geeker-border-light) !important;
-		}
-	}
-
 	// guide
 	#driver-highlighted-element-stage {
 		background-color: var(--el-color-info-light-5) !important;

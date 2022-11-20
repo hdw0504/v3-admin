@@ -244,15 +244,23 @@
 // 	}
 // }
 
+// 加上root是为了优先级更高
 :root{
   .el-header{
     --el-header-padding: var(--header-padding);
     --el-header-height: var(--header-height);
   }
-  .el-footer{
-    --el-footer-height: var(--footer-height);
-  }
   .el-tabs{
     --el-tabs-header-height: var(--tabs-height);
   }
+  .el-menu{
+    --el-menu-bg-color: var(--menu-bg-color);
+    --el-menu-hover-bg-color: var(--menu-bg-hover-color);
+    --el-menu-text-color: var(--menu-text-color);
+    --el-menu-active-color: var(--menu-text-active-color);
+  }
+  .el-footer{
+    --el-footer-height: var(--footer-height);
+  }
+
 }
