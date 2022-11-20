@@ -17,7 +17,7 @@ import { isDark } from '@/composables/dark'
         @change="toggleDark()"
       />
       <img img-resize w-536px h-354px shadow-2xl rd-4 src="https://picsum.photos/536/354" alt="">
-      <LoginForm class="form" flex-1 max-w-500px p-10 p-b-4 rd-4 shadow-xl />
+      <LoginForm class="form" />
     </div>
   </div>
 </template>
