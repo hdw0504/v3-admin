@@ -4,8 +4,7 @@
 
 ## TODO:
 - 尝试打包优化 [项目打包优化实战之-视图分析](https://blog.csdn.net/g18204746769/article/details/127431733)
-- 解决 `unplugin-auto-import` 在加载登录页的时候并未注册 `ElMessage` 和 `ElNotification`
-  - 目前只是在登录页代码中强行使用 `ElMessage` 和 `ElNotification`
+- ~~~解决 `unplugin-auto-import` 在加载登录页的时候并未注册 `ElMessage` 和 `ElNotification`~~~
 
 ## unocss
 如何 import 别的css文件（里面包含unocss的--at-apply）
