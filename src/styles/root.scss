@@ -8,10 +8,12 @@
   --menu-bg-hover-color: #14151a;
   --menu-text-color: #bdbdc0;
   --menu-text-active-color: #ffffff;
+  --main-bg-color: #ffffff;
   --footer-height: 30px;
 }
 
 :root.dark{
   --menu-bg-color: var(--el-bg-color);
   --menu-bg-hover-color: #0d0d0d;
+  --main-bg-color: var(--el-bg-color);
 }

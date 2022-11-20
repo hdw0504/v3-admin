@@ -12,6 +12,12 @@
   box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary) !important;
 }
 
+// card 卡片样式
+.card {
+  --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--el-border-color-light)] bg-[var(--main-bg-color)] shadow-sm;
+}
+
+
 /* clearfix */
 .clearfix::after {
   display: block;
