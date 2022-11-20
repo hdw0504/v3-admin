@@ -16,7 +16,7 @@ import { isDark } from '@/composables/dark'
         active-icon="Sunny" inactive-icon="Moon"
         @change="toggleDark()"
       />
-      <img img-resize w-536px h-354px shadow-2xl rd-4 src="https://picsum.photos/536/354" alt="">
+      <LazyImage src="https://picsum.photos/536/354" class="w-536px! h-354px! rd-4! img-resize shadow-2xl" />
       <LoginForm class="form" />
     </div>
   </div>

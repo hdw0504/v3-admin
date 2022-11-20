@@ -10,8 +10,7 @@
 }
 
 .form{
-  --at-apply: flex-none w-536px p-10 p-b-4 rd-4 shadow-xl;
-  --at-apply: xl:flex-1 xl:max-w-500px;
+  --at-apply: flex-none max-w-536px w-full resize-both p-10 p-b-4 rd-4 shadow-xl;
 }
 
 .theme-switch {
