@@ -1,4 +1,4 @@
-<script setup name="home">
+<script setup lang="ts" name="home">
 const openMessage = () => {
   ElMessage({
     type: 'success',
