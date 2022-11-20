@@ -4,7 +4,6 @@ import { resolve } from 'path'
 import type { ConfigEnv, UserConfig } from 'vite'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-// import Pages from 'vite-plugin-pages'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
@@ -12,8 +11,8 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Unocss from 'unocss/vite'
 import { wrapperEnv } from './src/utils/getEnv'
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -86,8 +85,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
        * DOM 做递归组件时需要
        * vue-devtools 调试工具里显示的组见名称是由 vue 中组件 name 决定的
        * */
-
-      //
       VueSetupExtend(),
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
@@ -102,13 +99,17 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           './src/composables',
         ],
         vueTemplate: true,
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+        ],
       }),
 
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: true,
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+        ],
       }),
 
       // https://github.com/antfu/unocss

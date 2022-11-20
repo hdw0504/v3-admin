@@ -17,12 +17,10 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "vite/client",
-      "vite-plugin-pages/client",
       "element-plus/global"
     ],
     // 模块名到基于 baseUrl 的路径映射的列表。
     "paths": {
-      "@": ["src"],
       "@/*": ["src/*"]
     }
   },
