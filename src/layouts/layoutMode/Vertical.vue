@@ -18,9 +18,9 @@ const { getMenuList } = storeToRefs(AuthStore())
 
 <template>
   <el-container w-full h-full min-w-740px>
-    <el-aside w-auto overflow-inherit class="w-auto! bg-[#191a20] b-r b-r-[#191a20] ">
+    <el-aside>
       <div class="menu" :class="[themeConfig.isCollapse ? 'w-[var(--menu-hide)]' : 'w-[var(--menu-show)]']">
-        <div flex justify-center items-center box-border class="h-[var(--header-height)] b-b b-b-[#282a35]">
+        <div flex justify-center items-center box-border class="h-[var(--header-height)] b-b b-b-[#414243]">
           <img src="@/assets/images/logo.svg" alt="logo">
           <span v-show="!themeConfig.isCollapse" m-l-2 text-8 font-bold truncate class="text-[#dadada]">wink</span>
         </div>
@@ -29,7 +29,6 @@ const { getMenuList } = storeToRefs(AuthStore())
             class="overflow-x-hidden b-r-none!"
             :default-active="activeMenu" :collapse="themeConfig.isCollapse"
             :router="false" :collapse-transition="false" :unique-opened="true"
-            background-color="#191a20" text-color="#bdbdc0" active-text-color="#ffffff"
           >
             <SubMenu :menu-list="getMenuList" />
           </el-menu>
@@ -42,13 +41,13 @@ const { getMenuList } = storeToRefs(AuthStore())
         <Header />
       </el-header>
 
-      <Tabs />
+      <Tabs v-if="themeConfig.tabs" />
 
       <el-main>
         <Main />
       </el-main>
 
-      <el-footer>
+      <el-footer v-if="themeConfig.footer">
         <Footer />
       </el-footer>
     </el-container>
@@ -56,23 +55,26 @@ const { getMenuList } = storeToRefs(AuthStore())
 </template>
 
 <style lang="scss" scoped>
-.menu{
+.el-aside{
+ --at-apply: overflow-inherit box-border w-auto\! bg-[#191a20] dark:bg-[var(--el-bg-color)] b-r b-r-[#191a20] dark:b-r-[var(--el-border-color-light)];
+ .menu{
   --at-apply: flex flex-col h-full transition-width transition-ease transition-duration-300;
-  .el-scrollbar {
-    height: calc(100% - 55px);
+    .el-scrollbar {
+      height: calc(100% - 55px);
+    }
   }
 }
 .el-header{
-  --at-apply: flex items-center justify-between box-border b-b b-b-[#f1f1f1];
+  --at-apply: flex items-center justify-between box-border dark:bg-[var(--el-bg-color)] b-b b-b-[var(--el-border-color-light)];
 }
 .el-main{
-  --at-apply: bg-[#f0f2f5] box-border p-10px overflow-x-hidden;
+  --at-apply: bg-[var(--el-bg-color-page)] box-border p-10px overflow-x-hidden;
   &::-webkit-scrollbar {
-    --at-apply: bg-[#f0f2f5];
+    --at-apply: bg-[var(--el-bg-color-page)];
   }
 }
 .el-footer{
-  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm b-t b-t-[#e4e7ed];
+  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--el-border-color-light)];
 }
 :deep(.el-menu-item.is-active) {
   background: #060708;

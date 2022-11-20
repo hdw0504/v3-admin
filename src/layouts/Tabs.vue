@@ -42,7 +42,7 @@ const tabRemove = (activeTabPath: string) => {
 </script>
 
 <template>
-  <div flex>
+  <div flex dark="bg-[var(--el-bg-color)] b-b b-b-[var(--el-border-color-light)]">
     <el-tabs v-model="tabsMenuValue" type="card" @tab-click="tabClick" @tab-remove="tabRemove">
       <el-tab-pane v-for="item in tabsMenuList" :key="item.path" :label="item.title" :name="item.path" :closable="item.close">
         <template #label>
