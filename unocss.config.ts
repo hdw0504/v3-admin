@@ -23,8 +23,10 @@ export default defineConfig({
       // When using bundlers, you can provide the collections using dynamic imports so they will be bundler as async chunk and loaded on demand.
       collections: {
         carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default),
+        ep: () => import('@iconify-json/ep/icons.json').then(i => i.default),
         mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default),
-        // logos: () => import('@iconify-json/logos/icons.json').then(i => i.default),
+        // twemoji has some problem
+        // twemoji: () => import('@iconify-json/twemoji/icons.json').then(i => i.default),
       },
       scale: 1.4,
       warn: true,
