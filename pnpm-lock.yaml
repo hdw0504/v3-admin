@@ -26,7 +26,7 @@ specifiers:
   rollup-plugin-visualizer: ^5.8.3
   sass: ^1.56.1
   taze: ^0.8.4
-  typescript: 4.8.4
+  typescript: ^4.8.4
   unocss: ^0.46.5
   unplugin-auto-import: ^0.11.4
   unplugin-vue-components: ^0.22.9
