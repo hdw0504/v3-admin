@@ -4,14 +4,7 @@ import { createApp } from 'vue'
 // import "@/assets/iconfont/iconfont.scss";
 // font css
 // import "@/assets/fonts/font.scss";
-// custom element css
-import '@/styles/element.scss'
-// reset style sheet
-import '@/styles/reset.scss'
-// CSS common style sheet
-import '@/styles/common.scss'
-// css root var
-import '@/styles/root.scss'
+
 // element icons
 import * as Icons from '@element-plus/icons-vue'
 
@@ -28,8 +21,8 @@ import pinia from '@/stores/index'
 import 'virtual:svg-icons-register'
 // errorHandler
 import errorHandler from '@/utils/errorHandler'
-// element 样式 (内置暗黑模式)
-import 'element-plus/theme-chalk/dark/css-vars.css'
+// 可修改主题的 element 样式 (内置暗黑模式)
+import '@/styles/index.scss'
 
 import '@unocss/reset/tailwind.css'
 import 'uno.css'

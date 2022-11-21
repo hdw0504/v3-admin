@@ -28,7 +28,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
-          // additionalData: '@import "@/styles/common.scss";',
+          additionalData: '@use "@/styles/element/index.scss" as *;',
         },
       },
     },
@@ -100,7 +100,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         ],
         dts: true,
         vueTemplate: true,
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver({
+            importStyle: 'sass',
+          }),
+        ],
       }),
 
       // https://github.com/antfu/vite-plugin-components

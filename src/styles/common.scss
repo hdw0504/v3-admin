@@ -20,11 +20,7 @@
 
 /* clearfix */
 .clearfix::after {
-  display: block;
-  height: 0;
-  overflow: hidden;
-  clear: both;
-  content: "";
+  --at-apply: display-block h-0 overflow-hidden clear-both content-none;
 }
 
 /* 文字单行省略号 unocss => truncate */
