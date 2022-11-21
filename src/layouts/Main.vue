@@ -4,13 +4,17 @@ import { AuthStore } from '@/stores/modules/auth'
 const { getKeepAliveRouter } = storeToRefs(AuthStore())
 // 刷新当前页面
 const isRouterRefresh = ref(true)
+
 const refreshCurrentPage = () => {
   isRouterRefresh.value = false
   nextTick(() => {
     isRouterRefresh.value = true
   })
 }
-provide('refresh', refreshCurrentPage)
+
+mittBus.on('refresh', () => {
+  refreshCurrentPage()
+})
 </script>
 
 <template>

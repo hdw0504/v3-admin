@@ -33,7 +33,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
     </el-divider> -->
 
     <el-divider content-position="center">
-      <span i-el-ColdDrink />
+      <el-icon><ColdDrink /></el-icon>
       全局主题
     </el-divider>
     <!-- <div class="theme-item">
@@ -86,5 +86,8 @@ const { themeConfig } = storeToRefs(GlobalStore())
   &>div:not(.el-divider){
     --at-apply: flex justify-between items-center m-y-2;
   }
+}
+.el-icon{
+  top:0.15em;
 }
 </style>
