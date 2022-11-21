@@ -47,6 +47,15 @@ const openNotification = () => {
     <el-button @click="openNotification">
       notification
     </el-button>
+    <el-button @click="$router.push({ name: '403' })">
+      403
+    </el-button>
+    <el-button @click="$router.push({ name: '404' })">
+      404
+    </el-button>
+    <el-button @click="$router.push({ name: '500' })">
+      500
+    </el-button>
   </div>
 </template>
 
