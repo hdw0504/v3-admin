@@ -9,7 +9,7 @@
   background-color: hsla(0deg, 0%, 100%, 0.8);
 }
 
-.form{
+.form {
   --at-apply: flex-none max-w-536px w-full resize-both p-10 p-b-4 rd-4 shadow-xl;
 }
 
@@ -21,12 +21,13 @@
   .bg {
     background-color: var(--el-fill-color-extra-light);
   }
+
   .box {
     background-color: var(--el-mask-color);
   }
-  .form{
+
+  .form {
     --at-apply: shadow-dark;
     background-color: var(--el-bg-color);
-
   }
 }

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { initDynamicRouter } from './modules/dynamicRouter'
-import { staticRouter } from '@/routers/modules/staticRouter'
+import { errorRouter, staticRouter } from '@/routers/modules/staticRouter'
 import NProgress from '@/config/nprogress'
 import { LOGIN_URL } from '@/config/config'
 import { GlobalStore } from '@/stores'
@@ -28,8 +28,7 @@ const axiosCanceler = new AxiosCanceler()
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [...staticRouter],
-  // routes: [...staticRouter, ...errorRouter],
+  routes: [...staticRouter, ...errorRouter],
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

@@ -31,7 +31,7 @@ export const staticRouter: RouteRecordRaw[] = [
 /**
  * errorRouter(错误页面路由)
  */
-export const errorRouter = [
+export const errorRouter: RouteRecordRaw[] = [
   {
     path: '/403',
     name: '403',
