@@ -137,6 +137,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     // https://github.com/vitest-dev/vitest
     test: {
+      globals: true,
       environment: 'jsdom',
     },
   }
