@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import piniaPersistConfig from '@/config/piniaPersist'
 import type { TabsMenuProps, TabsState } from '@/stores/interface'
 import { TABS_WHITE_LIST } from '@/config/config'

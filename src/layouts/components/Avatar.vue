@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { GlobalStore } from '@/stores'
 import router from '@/routers'
 import { LOGIN_URL } from '@/config/config'

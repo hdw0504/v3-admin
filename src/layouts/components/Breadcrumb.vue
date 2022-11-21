@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { GlobalStore } from '@/stores'
 import { AuthStore } from '@/stores/modules/auth'
 import { HOME_URL } from '@/config/config'

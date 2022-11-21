@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { AuthStore } from '@/stores/modules/auth'
 
 const { getKeepAliveRouter } = storeToRefs(AuthStore())

@@ -1,5 +1,4 @@
 <script setup lang="ts" name="layoutVertical">
-import { storeToRefs } from 'pinia'
 import Footer from '../Footer.vue'
 import Header from '../Header.vue'
 import Main from '../Main.vue'
@@ -56,7 +55,7 @@ const { getMenuList } = storeToRefs(AuthStore())
 
 <style lang="scss" scoped>
 .el-aside{
- --at-apply: overflow-inherit box-border w-auto\! bg-[#191a20] dark:bg-[var(--el-bg-color)] b-r b-r-[#191a20] dark:b-r-[var(--el-border-color-light)];
+ --at-apply: overflow-inherit box-border w-auto\! bg-[#191a20] dark:bg-[var(--el-bg-color)] b-r b-r-[#191a20] dark:b-r-[var(--border-color)];
  .menu{
   --at-apply: flex flex-col h-full transition-width transition-ease transition-duration-300;
     .el-scrollbar {
@@ -65,7 +64,7 @@ const { getMenuList } = storeToRefs(AuthStore())
   }
 }
 .el-header{
-  --at-apply: flex items-center justify-between box-border dark:bg-[var(--el-bg-color)] b-b b-b-[var(--el-border-color-light)];
+  --at-apply: flex items-center justify-between box-border dark:bg-[var(--el-bg-color)] b-b b-b-[var(--border-color)];
 }
 .el-main{
   --at-apply: bg-[var(--el-bg-color-page)] box-border p-10px overflow-x-hidden;
@@ -74,7 +73,7 @@ const { getMenuList } = storeToRefs(AuthStore())
   }
 }
 .el-footer{
-  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--el-border-color-light)];
+  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--border-color)];
 }
 :deep(.el-menu-item.is-active) {
   background: #060708;

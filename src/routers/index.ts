@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { storeToRefs } from 'pinia'
+
 import { initDynamicRouter } from './modules/dynamicRouter'
 import { staticRouter } from '@/routers/modules/staticRouter'
 import NProgress from '@/config/nprogress'

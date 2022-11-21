@@ -1,6 +1,6 @@
 <script setup  lang="ts" name="layout">
-import { storeToRefs } from 'pinia'
 import LayoutVertical from './layoutMode/Vertical.vue'
+import ThemeDrawer from './components/ThemeDrawer.vue'
 import { GlobalStore } from '@/stores'
 
 const LayoutComponents: { [key: string]: any } = {
@@ -15,7 +15,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
 
 <template>
   <component :is="LayoutComponents[themeConfig.layout]" />
-  <!-- <ThemeDrawer /> -->
+  <ThemeDrawer />
 </template>
 
 <style lang="scss" scoped>

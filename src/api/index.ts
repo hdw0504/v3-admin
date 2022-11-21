@@ -1,6 +1,6 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import axios from 'axios'
-import { storeToRefs } from 'pinia'
+
 import { AxiosCanceler, checkStatus } from './helper'
 import type { ResultData } from './interface'
 import { ResultEnum } from '@/types/httpEnum'

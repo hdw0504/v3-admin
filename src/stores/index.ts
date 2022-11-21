@@ -1,4 +1,3 @@
-import { createPinia, defineStore } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import type { GlobalState } from './interface'
 // import { ThemeConfigProps } from './interface'

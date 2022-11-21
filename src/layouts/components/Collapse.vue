@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { GlobalStore } from '@/stores'
 
 const { themeConfig } = storeToRefs(GlobalStore())

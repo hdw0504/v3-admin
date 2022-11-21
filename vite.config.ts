@@ -93,6 +93,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           'vue/macros',
           'vue-router',
           '@vueuse/core',
+          'pinia',
         ],
         dirs: [
           './src/composables',

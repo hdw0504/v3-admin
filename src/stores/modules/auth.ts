@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import type { AuthState } from '@/stores/interface'
 import piniaPersistConfig from '@/config/piniaPersist'
 import { getAuthButtonListApi, getAuthMenuListApi } from '@/api/modules/login'

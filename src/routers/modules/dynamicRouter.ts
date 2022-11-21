@@ -1,11 +1,10 @@
-import { storeToRefs } from 'pinia'
 import router from '@/routers/index'
 import { getFlatArr } from '@/utils/util'
 import { LOGIN_URL } from '@/config/config'
 import { AuthStore } from '@/stores/modules/auth'
 import { notFoundRouter } from '@/routers/modules/staticRouter'
 
-// 引入 pages 文件夹下所有 vue 文件
+// 引入 pages 文件夹下所有 vue 文件 如果不需要懒加载 => { eager: true }
 const modules = import.meta.glob('@/pages/**/*.vue')
 
 /**

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FormInstance } from 'element-plus'
-import { storeToRefs } from 'pinia'
+
 import type { Login } from '@/api/interface'
 import { loginApi } from '@/api/modules/login'
 import { GlobalStore } from '@/stores'
