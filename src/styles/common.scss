@@ -14,7 +14,7 @@
 
 // card 卡片样式
 .card {
-  --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--el-border-color-light)] bg-[var(--main-bg-color)] shadow-sm;
+  --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-bg-color)] shadow-sm;
 }
 
 

@@ -182,14 +182,14 @@
 // 	.el-drawer__header {
 // 		padding: 15px 20px 14px;
 // 		margin-bottom: 0;
-// 		border-bottom: 1px solid var(--el-border-color-lighter);
+// 		border-bottom: 1px solid var(--border-colorer);
 // 		span {
 // 			font-size: 17px;
 // 			color: var(--el-text-color-primary) !important;
 // 		}
 // 	}
 // 	.el-drawer__footer {
-// 		border-top: 1px solid var(--el-border-color-lighter);
+// 		border-top: 1px solid var(--border-colorer);
 // 	}
 
 // 	// drawer select 样式
@@ -215,7 +215,7 @@
 // 	.el-dialog__header {
 // 		padding: 15px 20px;
 // 		margin: 0;
-// 		border-bottom: 1px solid var(--el-border-color-lighter);
+// 		border-bottom: 1px solid var(--border-colorer);
 // 		.el-dialog__title {
 // 			font-size: 17px;
 // 		}
@@ -223,21 +223,33 @@
 // }
 
 // 加上root是为了优先级更高
-:root{
-  .el-header{
+:root {
+
+  // layout
+  .el-header {
     --el-header-padding: var(--header-padding);
     --el-header-height: var(--header-height);
   }
-  .el-tabs{
+
+  .el-tabs {
     --el-tabs-header-height: var(--tabs-height);
   }
-  .el-menu{
+
+  .el-menu {
     --el-menu-bg-color: var(--menu-bg-color);
     --el-menu-hover-bg-color: var(--menu-bg-hover-color);
     --el-menu-text-color: var(--menu-text-color);
     --el-menu-active-color: var(--menu-text-active-color);
   }
-  .el-footer{
+
+  .el-footer {
     --el-footer-height: var(--footer-height);
+  }
+
+  // 抽屉
+  .el-drawer {
+    .el-drawer__header {
+      --at-apply: box-border m-0 p-y-0 h-[var(--header-height)] b-b b-b-[var(--border-color)] color-current;
+    }
   }
 }

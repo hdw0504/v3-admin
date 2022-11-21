@@ -1,18 +1,27 @@
 :root {
+  // layout
   --header-height: 55px;
   --header-padding: 0 15px;
+
   --tabs-height: 40px;
+
   --menu-hide: 56px;
   --menu-show: 210px;
   --menu-bg-color: #191a20;
   --menu-bg-hover-color: #14151a;
   --menu-text-color: #bdbdc0;
   --menu-text-active-color: #ffffff;
+
   --main-bg-color: #ffffff;
+
   --footer-height: 30px;
+  // el components
+
+  // global
+  --border-color: var(--el-border-color-light);
 }
 
-:root.dark{
+:root.dark {
   --menu-bg-color: var(--el-bg-color);
   --menu-bg-hover-color: #0d0d0d;
   --main-bg-color: var(--el-bg-color);

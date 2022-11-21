@@ -1,6 +1,5 @@
 <script setup lang="ts" name="login">
 import LoginForm from './components/LoginForm.vue'
-import { isDark } from '@/composables/dark'
 </script>
 
 <template>

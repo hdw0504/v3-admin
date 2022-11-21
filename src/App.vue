@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import zhCn from 'element-plus/es/locale/lang/zh-cn'
 // import en from 'element-plus/es/locale/lang/en'
-import { storeToRefs } from 'pinia'
+
 import { GlobalStore } from '@/stores'
 
 // 配置全局组件大小 (small/default(medium)/large)
