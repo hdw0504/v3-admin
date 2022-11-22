@@ -5,7 +5,7 @@
 ## 项目技术栈
 - **Vue 3.2**
   - 使用 `script setup`、`composition api`
-  - 使用 `mitt` 用于事件总线（vue2 的 envent bus）
+  - 使用 `mitt` 用于事件总线（vue2 的 eventBus）
 - **TypeScript**
   - 使用 ts 并开启严格模式
 - **Pinia**

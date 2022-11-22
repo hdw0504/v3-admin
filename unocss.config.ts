@@ -10,6 +10,9 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  rules: [
+    [/^line-height-(.+)$/, ([, d]) => ({ 'line-height': `${+d / 4}rem` })],
+  ],
   shortcuts: [
     ['text-icon', 'text-1.4em!'],
     ['color-fade', 'text-gray-900:50 dark:text-gray-300:50'],

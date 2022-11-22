@@ -37,7 +37,7 @@ const openNotification = () => {
 </script>
 
 <template>
-  <div class="card w-full h-full">
+  <div class="card-full">
     <el-button @click="openMessage">
       message
     </el-button>

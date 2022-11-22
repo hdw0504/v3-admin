@@ -12,11 +12,17 @@
   box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary) !important;
 }
 
-// card 卡片样式
-.card {
+// card 卡片默认样式 使用scss继承
+%card-common {
   --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-bg-color)] shadow-sm;
 }
-
+.card{
+  @extend %card-common;
+}
+.card-full{
+  @extend %card-common;
+  --at-apply: w-full h-full;
+}
 
 /* clearfix */
 .clearfix::after {

@@ -17,7 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "vite/client",
-      "element-plus/global"
+      "element-plus/global",
+      "vitest/globals"
     ],
     // 模块名到基于 baseUrl 的路径映射的列表。
     "paths": {
