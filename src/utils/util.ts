@@ -252,20 +252,6 @@ export function getAllBreadcrumbList(menuList: Menu.MenuOptions[]) {
 }
 
 /**
- * @description 格式化表格单元格默认值(el-table-column)
- * @param {Number} row 行
- * @param {Number} col 列
- * @param {String} callValue 当前单元格值
- * @return string
- * */
-export function defaultFormat(row: number, col: number, callValue: any) {
-  // 如果当前值为数组,使用 / 拼接（根据需求自定义）
-  if (isArray(callValue))
-    return callValue.length ? callValue.join(' / ') : '--'
-  return callValue ?? '--'
-}
-
-/**
  * @description 处理无数据情况
  * @param {String} callValue 需要处理的值
  * @return string
