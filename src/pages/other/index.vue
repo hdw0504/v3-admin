@@ -52,6 +52,11 @@ const testFn = ref<InstanceType<typeof TestExpose>>()
         <div>sourceType: {{ sourceType }}</div>
       </TestSlot>
     </div>
+    <div w-100>
+      自定义svg和自动注册svg
+      <i-icons-test />
+      <i-mdi-account />
+    </div>
   </div>
 </template>
 
