@@ -133,6 +133,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       // https://github.com/antfu/unplugin-icons
       Icons({
         autoInstall: true,
+        compiler: 'vue3',
+        defaultClass: 'inline vertical-middle',
         customCollections: {
           icons: FileSystemIconLoader(
             './src/assets/icons',
