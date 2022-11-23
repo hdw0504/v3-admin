@@ -8,9 +8,11 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import { wrapperEnv } from './src/utils/getEnv'
@@ -53,6 +55,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         // 响应式语法糖
         reactivityTransform: true,
       }),
+
       // https://www.jianshu.com/p/77cceaaa4723
       createHtmlPlugin({
         inject: {
@@ -61,11 +64,13 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           },
         },
       }),
+
       // 使用 svg 图标
-      createSvgIconsPlugin({
-        iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
-        symbolId: 'icon-[dir]-[name]',
-      }),
+      // createSvgIconsPlugin({
+      //   iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
+      //   symbolId: 'icon-[dir]-[name]',
+      // }),
+
       // 自动引入路由 https://github.com/hannoeru/vite-plugin-pages
       // Pages(),
       // 是否生成包预览(分析依赖包大小,方便做优化处理)
@@ -84,8 +89,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
        * 当项目使用 keep-alive 时，可搭配组件name进行缓存过滤
        * DOM 做递归组件时需要
        * vue-devtools 调试工具里显示的组见名称是由 vue 中组件 name 决定的
+       *
+       * 在 vue 3.2.34 或以上的版本中，使用 <script setup> 的单文件组件会自动根据文件名生成对应的 name 选项
+       * 即使是在配合 <KeepAlive> 使用时也无需再手动声明。
        * */
       VueSetupExtend(),
+
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
         imports: [
@@ -110,7 +119,26 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: true,
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+          IconsResolver({
+            alias: {
+              // park: 'icon-park',
+            },
+            customCollections: ['icons'],
+          }),
+        ],
+      }),
+
+      // https://github.com/antfu/unplugin-icons
+      Icons({
+        autoInstall: true,
+        customCollections: {
+          icons: FileSystemIconLoader(
+            './src/assets/icons',
+            // svg => svg.replace(/^<svg /, '<svg fill="currentColor" '),
+          ),
+        },
       }),
 
       // https://github.com/antfu/unocss

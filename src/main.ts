@@ -17,8 +17,6 @@ import router from '@/routers/index'
 // import I18n from "@/languages/index";
 // pinia store
 import pinia from '@/stores/index'
-// svg icons
-import 'virtual:svg-icons-register'
 // errorHandler
 import errorHandler from '@/utils/errorHandler'
 // 可修改主题的 element 样式 (内置暗黑模式)
