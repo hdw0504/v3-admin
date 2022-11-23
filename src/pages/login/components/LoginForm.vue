@@ -64,7 +64,7 @@ whenever(enter, () => {
 </script>
 
 <template>
-  <div v-bind="$attrs">
+  <div>
     <ElForm ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" placeholder="用户名：admin / user">

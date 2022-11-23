@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <el-skeleton v-bind="$attrs" :loading="loading" variant="image" :rows="1" animated>
+  <el-skeleton :loading="loading" variant="image" :rows="1" animated>
     <template #template>
       <el-skeleton-item ref="skeletonImgRef" v-bind="$attrs" variant="image" />
     </template>
