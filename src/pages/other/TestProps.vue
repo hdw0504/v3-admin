@@ -32,16 +32,16 @@ const changeText = () => {
 </script>
 
 <template>
-  <div v-bind="$attrs">
-    <el-input w-100 :model-value="modelValue" @input="inputChange" />
-    <el-input w-100 :model-value="name" @input="emit('update:name', $event)">
+  <div>
+    <el-input :model-value="modelValue" @input="inputChange" />
+    <el-input :model-value="name" @input="emit('update:name', $event)">
       <template #append>
         <el-button @click="changeName">
           {{ name }}
         </el-button>
       </template>
     </el-input>
-    <el-input w-100 :model-value="text" @input="emit('textChange', $event)">
+    <el-input :model-value="text" @input="emit('textChange', $event)">
       <template #append>
         <el-button @click="changeText">
           {{ text }}
