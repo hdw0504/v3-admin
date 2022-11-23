@@ -29,6 +29,11 @@
   --at-apply: display-block h-0 overflow-hidden clear-both content-none;
 }
 
+// 解决 unplugin-icons defaltClass 上用 unocss 不生效
+.inline{
+  --at-apply: inline;
+}
+
 /* 文字单行省略号 unocss => truncate */
 /* 文字多行省略号 shortcuts => line-clamp-n */
 

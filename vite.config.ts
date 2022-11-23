@@ -134,7 +134,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Icons({
         autoInstall: true,
         compiler: 'vue3',
-        defaultClass: 'inline vertical-middle',
+        defaultClass: 'inline',
         customCollections: {
           icons: FileSystemIconLoader(
             './src/assets/icons',
