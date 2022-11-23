@@ -24,6 +24,7 @@
 ## TODO:
 - 尝试打包优化 [项目打包优化实战之-视图分析](https://blog.csdn.net/g18204746769/article/details/127431733)
 - ~~解决 `unplugin-auto-import` 在加载登录页的时候并未注册 `ElMessage` 和 `ElNotification`~~
+- ~~解决异步 icon（`<componnent :is="icon" />`）不会自动引入 icon 问题~~
 
 ## unocss
 如何 import 别的css文件（里面包含unocss的--at-apply）
@@ -68,3 +69,15 @@ Setup store 比 Option Store 带来了更多的灵活性，因为你可以在一
 `styles/element/dark.scss` => 修改暗黑主题色配置
 `styles/element.scss` => 修改全局 element 组件样式
 `styles/root.css` => 自定义全局css变量
+
+
+## 已解决问题
+### 解决 `unplugin-auto-import` 在加载登录页的时候并未注册 `ElMessage` 和 `ElNotification`
+确保去掉引入文件(`import xxx from 'element-plus'`) 删除或注释掉手动引入的组件 重启项目就没问题了 [el-plus-auto-import-solution](https://github.com/hdw0504/el-plus-auto-import-solution)
+
+### 解决异步 icon（`<componnent :is="icon" />`）不会自动引入 icon 问题
+- 解决方案1
+  - 参考官方issue [Dynamic icon components](https://github.com/antfu/unplugin-icons/issues/5)
+- 解决方案2
+  - `ni -D @iconify/vue` [文档](https://www.npmjs.com/package/@iconify/vue)
+  - 使用 `<Icon icon="mdi-light:home" />` 他会根据你的 iconname 请求服务获取 svg，然后存储到localstoreage，供下次使用
