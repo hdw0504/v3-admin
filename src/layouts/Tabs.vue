@@ -128,7 +128,7 @@ const closeAllTab = () => {
   .el-tabs__item{
     --at-apply: b-l-none b-b-2px b-b-current;
     &:not(.is-active){
-      --at-apply: b-none text-[#ccc];
+      --at-apply: b-none;
     }
   }
   // tab 的 icon 位置不对
