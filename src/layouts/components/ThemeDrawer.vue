@@ -33,7 +33,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
     </el-divider> -->
 
     <el-divider content-position="center">
-      <el-icon><ColdDrink /></el-icon>
+      <el-icon><i-ep-cold-drink /></el-icon>
       全局主题
     </el-divider>
     <!-- <div class="theme-item">
@@ -51,7 +51,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
 
     <!-- 界面设置 -->
     <el-divider content-position="center">
-      <el-icon><Setting /></el-icon>
+      <el-icon><i-ep-setting /></el-icon>
       界面设置
     </el-divider>
     <div>

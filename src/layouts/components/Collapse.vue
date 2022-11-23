@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { GlobalStore } from '@/stores'
-
 const { themeConfig } = storeToRefs(GlobalStore())
 
 const collapse = () => {
@@ -10,7 +9,8 @@ const collapse = () => {
 
 <template>
   <el-icon class="m-r-20px text-icon cursor-pointer" @click="collapse">
-    <component :is="themeConfig.isCollapse ? 'expand' : 'fold'" />
+    <i-ep-expand v-if="themeConfig.isCollapse" />
+    <i-ep-fold v-else />
   </el-icon>
 </template>
 

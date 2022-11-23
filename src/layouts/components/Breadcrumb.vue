@@ -18,7 +18,7 @@ const breadcrumbList = computed(() => {
       <el-breadcrumb-item v-if="breadcrumbList[0].meta.title !== '首页'" :key="HOME_URL" :to="{ path: HOME_URL }">
         <div flex items-center>
           <el-icon v-if="themeConfig.breadcrumbIcon" class="m-r-6px text-1.1em!">
-            <HomeFilled />
+            <i-ep-home-filled />
           </el-icon>
           <span>首页</span>
         </div>

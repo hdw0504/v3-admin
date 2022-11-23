@@ -19,7 +19,7 @@ const config = reactive({
         <router-view />
       </template>
       <template #fallback>
-        <Loading />
+        <i-ep-loading />
       </template>
     </suspense>
   </el-config-provider>
