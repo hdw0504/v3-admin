@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { GlobalStore } from '@/stores'
+import sunny from '~icons/ep/sunny'
+import moon from '~icons/ep/moon'
 // import { DEFAULT_PRIMARY } from '@/config/config'
 
 const drawerVisible = ref(false)
@@ -44,7 +46,7 @@ const { themeConfig } = storeToRefs(GlobalStore())
       <span>暗黑模式</span>
       <el-switch
         :model-value="isDark" inline-prompt
-        active-icon="Sunny" inactive-icon="Moon"
+        :active-icon="sunny" :inactive-icon="moon"
         @change="toggleDark()"
       />
     </div>

@@ -8,6 +8,8 @@ import { TabsStore } from '@/stores/modules/tabs'
 import { HOME_URL } from '@/config/config'
 import { getTimeState } from '@/utils/util'
 import { initDynamicRouter } from '@/routers/modules/dynamicRouter'
+import CircleClose from '~icons/ep/circle-close'
+import UserFilled from '~icons/ep/user-filled'
 
 const router = useRouter()
 const tabsStore = TabsStore()
@@ -70,7 +72,7 @@ whenever(enter, () => {
         <el-input v-model="loginForm.username" placeholder="用户名：admin / user">
           <template #prefix>
             <el-icon>
-              <user />
+              <i-ep-user />
             </el-icon>
           </template>
         </el-input>
@@ -79,19 +81,19 @@ whenever(enter, () => {
         <el-input v-model="loginForm.password" type="password" placeholder="密码：123456" show-password autocomplete="new-password">
           <template #prefix>
             <el-icon>
-              <lock />
+              <i-ep-lock />
             </el-icon>
           </template>
         </el-input>
       </el-form-item>
       <el-form-item>
         <el-col :span="11">
-          <el-button w-full icon="CircleClose" round @click="resetForm()">
+          <el-button w-full :icon="CircleClose" round @click="resetForm()">
             重置
           </el-button>
         </el-col>
         <el-col :span="11" :offset="2">
-          <el-button w-full icon="UserFilled" round type="primary" :loading="loading" @click="login()">
+          <el-button w-full :icon="UserFilled" round type="primary" :loading="loading" @click="login()">
             登录
           </el-button>
         </el-col>

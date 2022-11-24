@@ -81,3 +81,4 @@ Setup store 比 Option Store 带来了更多的灵活性，因为你可以在一
 - 解决方案2
   - `ni -D @iconify/vue` [文档](https://www.npmjs.com/package/@iconify/vue)
   - 使用 `<Icon icon="mdi-light:home" />` 他会根据你的 iconname 请求服务获取 svg，然后存储到localstoreage，供下次使用
+因为为了减少无用icon占用打包容量，没有全局注册 icon 组件。所以当用到 icon 的时候不能直接把icon name直接写到组件的icon属性中（如el-button），需要手动引入图片icon文件，参考 `pages/login/components/loginForm.vue`

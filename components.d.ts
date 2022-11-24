@@ -49,6 +49,7 @@ declare module '@vue/runtime-core' {
     IEpFolderDelete: typeof import('~icons/ep/folder-delete')['default']
     IEpHomeFilled: typeof import('~icons/ep/home-filled')['default']
     IEpLoading: typeof import('~icons/ep/loading')['default']
+    IEpLock: typeof import('~icons/ep/lock')['default']
     IEpRefresh: typeof import('~icons/ep/refresh')['default']
     IEpRemove: typeof import('~icons/ep/remove')['default']
     IEpSetting: typeof import('~icons/ep/setting')['default']
