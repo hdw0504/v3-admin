@@ -61,8 +61,8 @@ const testFn = ref<InstanceType<typeof TestExpose>>()
 </template>
 
 <style lang="scss" scoped>
-.card-full{
-  >div:not(:first-child){
+.card-full {
+  >div:not(:first-child) {
     --at-apply: m-t-6;
   }
 }
