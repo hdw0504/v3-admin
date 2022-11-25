@@ -59,6 +59,7 @@ declare module '@vue/runtime-core' {
     IIconsTest: typeof import('~icons/icons/test')['default']
     IMdiAccount: typeof import('~icons/mdi/account')['default']
     LazyImage: typeof import('./src/components/LazyImage.vue')['default']
+    Plum: typeof import('./src/components/Plum.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

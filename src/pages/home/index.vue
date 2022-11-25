@@ -34,7 +34,9 @@ const svgs = [
 </script>
 
 <template>
-  <div class="card-full" flex flex-col justify-center items-center gap-8>
+  <div class="card-full" relative flex flex-col justify-center items-center gap-8>
+    <Plum is-background class="absolute top-0 left-0 w-full h-full opacity-20" />
+
     <div text-6xl m-t--40>
       welcome!
       <span animation class="wave">👋🏻</span>
@@ -62,14 +64,16 @@ const svgs = [
 
 <style lang="scss" scoped>
 div a {
-  img{
+  img {
     --at-apply: inline-block;
 
   }
-  &:not(:nth-child(1)) img{
+
+  &:not(:nth-child(1)) img {
     --at-apply: m-l-2;
   }
 }
+
 .wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -82,24 +86,31 @@ div a {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
   }
+
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
