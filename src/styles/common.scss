@@ -16,10 +16,12 @@
 %card-common {
   --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-bg-color)] shadow-sm;
 }
-.card{
+
+.card {
   @extend %card-common;
 }
-.card-full{
+
+.card-full {
   @extend %card-common;
   --at-apply: w-full h-full;
 }
@@ -30,7 +32,7 @@
 }
 
 // 解决 unplugin-icons defaltClass 上用 unocss 不生效
-.inline{
+.inline {
   --at-apply: inline;
 }
 
@@ -74,13 +76,10 @@
 
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: white;
+  --at-apply: w-1.5 h-1.5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dddee0;
-  border-radius: 20px;
-  box-shadow: inset 0 0 0 white;
+  --at-apply: b-rd-6;
+  background-color: var(--el-color-info-light-5);
 }

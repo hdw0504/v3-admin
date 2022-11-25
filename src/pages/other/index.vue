@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" name="other">
 import TestProps from './TestProps.vue'
 import TestInject from './TestInject.vue'
 import TestExpose from './TestExpose.vue'
