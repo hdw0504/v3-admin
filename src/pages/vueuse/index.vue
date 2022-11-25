@@ -85,7 +85,7 @@ const throttledInp = refThrottled(debouncedAndThrottledInp, 1000)
           refThrottled (输入节流)
         </el-link>
       </div>
-      <div class="card">
+      <div class="card max-w-100">
         <el-input v-model="debouncedAndThrottledInp" />
         <div class="note m-t-2">
           设置了 1000ms 延迟

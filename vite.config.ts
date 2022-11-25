@@ -163,6 +163,15 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           entryFileNames: 'assets/js/[name]-[hash].js',
           assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
         },
+        // 把组件按组分块
+        // https://rollupjs.org/guide/en/#outputmanualchunks
+        // manualChunks: {
+        //   'group-user': [
+        //     './src/UserDetails',
+        //     './src/UserDashboard',
+        //     './src/UserProfileEdit',
+        //   ],
+        // },
       },
     },
     // https://github.com/vitest-dev/vitest

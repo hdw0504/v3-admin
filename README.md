@@ -11,7 +11,7 @@
 - **Pinia**
   - 使用 `setup store` 抛弃厚重的 vuex 写法
 - **Vite3**
-  - 配置了自动引入样式和依赖、跨域代理、打包预览、gzip压缩
+  - 配置了自动注册、跨域代理、打包分析、gzip压缩
 - **vueuse**
   - 自动引入vueuse，多处使用如 `useMagicKeys` `whenever` `useDark` `useToggle` `useCssVar` 等
 - **unocss**
