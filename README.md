@@ -23,6 +23,7 @@
 
 ## TODO:
 - 尝试打包优化 [项目打包优化实战之-视图分析](https://blog.csdn.net/g18204746769/article/details/127431733)
+- canvas动图自适应背景
 - ~~解决 `unplugin-auto-import` 在加载登录页的时候并未注册 `ElMessage` 和 `ElNotification`~~
 - ~~解决异步 icon（`<componnent :is="icon" />`）不会自动引入 icon 问题~~
 

@@ -7,12 +7,12 @@
 interface Props {
   width?: number
   height?: number
-  branchLen: number // 单分支长度
-  initBranch: number // 最少分支数
-  frameDelay: number // 帧动画间隔
-  lightColor: string
-  darkColor: string
-  isBackground: boolean // 是否背景
+  branchLen?: number // 单分支长度
+  initBranch?: number // 最少分支数
+  frameDelay?: number // 帧动画间隔
+  lightColor?: string
+  darkColor?: string
+  isBackground?: boolean // 是否背景
 }
 
 interface Point {
@@ -33,7 +33,15 @@ const props = withDefaults(defineProps<Props>(), {
   darkColor: '#A3A6AD',
   isBackground: false,
 })
-const { width: propWidth, height: propHeight, branchLen, initBranch, frameDelay, lightColor, darkColor } = props
+const {
+  width: propWidth,
+  height: propHeight,
+  branchLen,
+  initBranch,
+  frameDelay,
+  lightColor,
+  darkColor,
+} = props
 
 const el = ref<HTMLElement>()
 const canvasEl = ref<HTMLCanvasElement>()
@@ -104,6 +112,7 @@ function startFrame() {
 startFrame()
 
 function cleanTaskAndFrame() {
+  framesCount = 0
   penddingTasks = []
   ctx.clearRect(0, 0, width, height)
 }
