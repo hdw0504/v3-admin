@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     403: typeof import('./src/components/ErrorMessage/403.vue')['default']
     404: typeof import('./src/components/ErrorMessage/404.vue')['default']
     500: typeof import('./src/components/ErrorMessage/500.vue')['default']
+    ConnectLine: typeof import('./src/components/ConnectLine.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
