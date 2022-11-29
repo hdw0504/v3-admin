@@ -31,8 +31,8 @@ link: https://v3-admin.netlify.app/
   - 项目的包管理工具
 
 ### 项目截图
-<img src="./src/assets/images/login.jpg" width="80%" />
-<img src="./src/assets/images/home.jpg" width="80%" />
+<img src="./src/assets/images/login.jpg" />
+<img src="./src/assets/images/home.jpg" />
 
 ### TODO:
 - 打包优化 <!-- - [项目打包优化实战之-视图分析](https://blog.csdn.net/g18204746769/article/details/127431733) -->
