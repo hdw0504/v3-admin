@@ -4,9 +4,9 @@
 link: https://v3-admin.netlify.app/
 ### 项目前身今世
 基于 [vitesse-lite](https://github.com/antfu/vitesse-lite)\
-复刻 [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin)<br>
+复刻 [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin)\
 该后台算是 `Geeker-admin` 的精简版 + vueuse + unocss
-把无用的功能删掉出来，只有最干净的架子
+把无用的功能删掉出来，只有最干净的架子\
 包管理使用 `pnpm`，使用 `nr up` 更新依赖（nr 是一个包管理工具名为 [ni](https://github.com/antfu/ni) 的指令）
 
 ### 项目技术栈
@@ -40,7 +40,7 @@ link: https://v3-admin.netlify.app/
 - canvas动图自适应背景
 
 ### unocss
-如何 import 别的css文件（里面包含unocss的--at-apply）
+如何 import 别的css文件（里面包含unocss的--at-apply）\
 在 sass 未来版本中会逐步用 `@use` 来代替 `@import`[Introducing Sass Modules](https://css-tricks.com/introducing-sass-modules/)
 ``` scss
 // custom element css
@@ -58,7 +58,7 @@ link: https://v3-admin.netlify.app/
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 ```
 
-在 `scss` 中使用 `@apply` 会有点问题 [@apply bug issue](https://github.com/unocss/unocss/issues/809)
+在 `scss` 中使用 `@apply` 会有点问题 [@apply bug issue](https://github.com/unocss/unocss/issues/809)\
 解决方案：使用 `--at-apply:` 代替 `@apply`
 ```scss
 <style scoped>
@@ -80,9 +80,9 @@ transformers: [
 ```
 
 ### Pinia
-使用 `setup store` 替代 `option store (vuex)` 的写法 [setup-stores](https://pinia.vuejs.org/zh/core-concepts/#setup-stores)
-官网话术：
-在 _Setup Store_ 中：
+使用 `setup store` 替代 `option store (vuex)` 的写法 [setup-stores](https://pinia.vuejs.org/zh/core-concepts/#setup-stores)\
+官网话术：\
+在 _Setup Store_ 中：\
 - `ref()` 就是 `state`
 - `computed()` 就是 `getters`
 - `function()` 就是 `actions`
