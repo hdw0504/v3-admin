@@ -3,8 +3,8 @@
 ### 在线预览
 link: https://v3-admin.netlify.app/
 ### 项目前身今世
-基于 [vitesse-lite](https://github.com/antfu/vitesse-lite)
-复刻 [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin)
+基于 [vitesse-lite](https://github.com/antfu/vitesse-lite)\
+复刻 [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin)<br>
 该后台算是 `Geeker-admin` 的精简版 + vueuse + unocss
 把无用的功能删掉出来，只有最干净的架子
 包管理使用 `pnpm`，使用 `nr up` 更新依赖（nr 是一个包管理工具名为 [ni](https://github.com/antfu/ni) 的指令）
