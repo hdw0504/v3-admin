@@ -25,6 +25,8 @@ import 'uno.css'
 
 const app = createApp(App)
 
+// 用于为应用内抛出的未捕获错误指定一个全局处理函数
+// https://cn.vuejs.org/api/application.html#app-config-errorhandler
 app.config.errorHandler = errorHandler
 
 // 注册element Icons组件 (为了减少包体积 使用 @iconify/vue 异步图标走接口)
