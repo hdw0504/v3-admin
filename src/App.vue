@@ -10,6 +10,8 @@ const { assemblySize } = storeToRefs(GlobalStore())
 const config = reactive({
   autoInsertSpace: false,
 })
+// 标题
+useTitle(import.meta.env.VITE_GLOB_APP_TITLE)
 </script>
 
 <template>

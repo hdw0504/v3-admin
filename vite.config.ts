@@ -4,16 +4,15 @@ import { resolve } from 'path'
 import type { ConfigEnv, UserConfig } from 'vite'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { visualizer } from 'rollup-plugin-visualizer'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import viteCompression from 'vite-plugin-compression'
-import { createHtmlPlugin } from 'vite-plugin-html'
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import { wrapperEnv } from './src/utils/getEnv'
 
@@ -30,7 +29,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
-        // 主题定制方案
+          // 主题定制方案
           additionalData: '@use "@/styles/element/index.scss" as *;',
         },
       },
@@ -55,15 +54,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Vue({
         // 响应式语法糖
         reactivityTransform: true,
-      }),
-
-      // https://www.jianshu.com/p/77cceaaa4723
-      createHtmlPlugin({
-        inject: {
-          data: {
-            title: viteEnv.VITE_GLOB_APP_TITLE,
-          },
-        },
       }),
 
       // 使用 svg 图标
