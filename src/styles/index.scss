@@ -1,11 +1,18 @@
+// @use ... as * 语法来去除命名空间
+// use @use xxx instead of @import xxx
+// https://css-tricks.com/introducing-sass-modules
+
 // custom element css
 @use './element.scss' as *;
 // reset style sheet
 @use './reset.scss' as *;
-// CSS common style sheet
+// css common style sheet
 @use './common.scss' as *;
 // css root var
 @use './root.scss' as *;
+// css transiton
+@use './transition.scss' as *;
 
-// import element dark theme
+// import element dark and light theme
+// 里面有暗黑和默认的 element 的默认颜色
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;

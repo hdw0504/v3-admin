@@ -23,6 +23,7 @@
 
   // 抽屉
   .el-drawer {
+    // 重写抽屉顶部样式 兼容暗黑模式
     .el-drawer__header {
       --at-apply: box-border m-0 p-y-0 h-[var(--header-height)] b-b b-b-[var(--border-color)] color-current;
     }

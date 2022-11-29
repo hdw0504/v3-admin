@@ -30,6 +30,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
+        // 主题定制方案
           additionalData: '@use "@/styles/element/index.scss" as *;',
         },
       },

@@ -12,15 +12,26 @@
   box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary) !important;
 }
 
+/* scroll bar */
+::-webkit-scrollbar {
+  --at-apply: w-1.5 h-1.5;
+}
+
+::-webkit-scrollbar-thumb {
+  --at-apply: b-rd-6;
+  background-color: var(--el-color-info-light-5);
+}
+
 // card 卡片默认样式 使用scss继承
 %card-common {
   --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-bg-color)] shadow-sm;
 }
-
+// 自适应 超过最大就滚动
 .card {
   @extend %card-common;
+  --at-apply: max-w-full max-h-full;
 }
-
+// 铺满
 .card-full {
   @extend %card-common;
   --at-apply: w-full h-full;
@@ -36,50 +47,7 @@
   --at-apply: inline;
 }
 
-/* 文字单行省略号 unocss => truncate */
-/* 文字多行省略号 shortcuts => line-clamp-n */
+// 文字单行省略号 => truncate
+// 文字多行省略号 => line-clamp-0 ... line-clamp-35
+// 行高 使用自定义规则 => line-height-1
 
-/* fade-transform */
-.fade-transform-leave-active,
-.fade-transform-enter-active {
-  transition: all 0.2s;
-}
-
-.fade-transform-enter-from {
-  opacity: 0;
-  transition: all 0.2s;
-  transform: translateX(-30px);
-}
-
-.fade-transform-leave-to {
-  opacity: 0;
-  transition: all 0.2s;
-  transform: translateX(30px);
-}
-
-/* Breadcrumb */
-.breadcrumb-enter-active,
-.breadcrumb-leave-active {
-  transition: all 0.2s ease;
-}
-
-.breadcrumb-enter-from,
-.breadcrumb-leave-active {
-  opacity: 0;
-  transform: translateX(10px);
-}
-
-.breadcrumb-leave-active {
-  position: absolute;
-  z-index: -1;
-}
-
-/* scroll bar */
-::-webkit-scrollbar {
-  --at-apply: w-1.5 h-1.5;
-}
-
-::-webkit-scrollbar-thumb {
-  --at-apply: b-rd-6;
-  background-color: var(--el-color-info-light-5);
-}

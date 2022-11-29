@@ -1,23 +1,26 @@
 $--colors: (
-  // "primary": (
-  //   "base": green,
+  // 'white': #ffffff,
+  // 'black': #000000,
+  // 'primary': (
+  //   'base': green,
   // ),
-  // "success": (
-  //   "base": #21ba45,
+  // 'success': (
+  //   'base': #67c23a,
   // ),
-  // "warning": (
-  //   "base": #f2711c,
+  // 'warning': (
+  //   'base': #e6a23c,
   // ),
-  // "danger": (
-  //   "base": #db2828,
+  // 'danger': (
+  //   'base': #f56c6c,
   // ),
-  // "error": (
-  //   "base": #db2828,
+  // 'error': (
+  //   'base': #f56c6c,
   // ),
-  // "info": (
-  //   "base": #42b8dd,
+  // 'info': (
+  //   'base': #909399,
   // ),
 );
+
 
 /*
   we can add this to custom namespace, default is 'el'
@@ -37,8 +40,10 @@ $--colors: (
   $colors: $--colors
 );
 
+// custom dark variables
+@use "./dark.scss" as *;
+
 // You can comment it to hide debug info.
 // @debug $--colors;
 
-// custom dark variables
-@use "./dark.scss";
+
