@@ -47,12 +47,14 @@ link: https://v3-admin.netlify.app/
 @use './element.scss' as *;
 // reset style sheet
 @use './reset.scss' as *;
-// CSS common style sheet
+// css common style sheet
 @use './common.scss' as *;
 // css root var
 @use './root.scss' as *;
-
-// import element dark theme
+// css transiton
+@use './transition.scss' as *;
+// import element dark and light theme
+// 里面有暗黑和默认的 element 的默认颜色
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 ```
 
