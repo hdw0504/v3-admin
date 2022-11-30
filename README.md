@@ -1,7 +1,14 @@
 # Vue 3.2 + TypeScript + Pinia + Vite3 + Element-Plus + vueuse + unocss + vitest 管理系统
 
-### 在线预览
-link: https://v3-admin.netlify.app/
+### 在线预览/仓库地址
+link: https://v3-admin.netlify.app
+github: https://github.com/hdw0504/v3-admin
+
+### 其余模板
+nuxt3 + element plus 模板
+link: https://element-plus-nuxt3.netlify.app
+github: https://github.com/hdw0504/el-plus-nuxt3
+
 ### 项目前身今世
 基于 [vitesse-lite](https://github.com/antfu/vitesse-lite)\
 复刻 [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin)\
