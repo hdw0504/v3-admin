@@ -167,8 +167,8 @@ function getEndPoint(b: Branch) {
 
 function startDraw() {
   // // 如果没有默认值获取dom的宽高
-  width = propWidth || el.value!.clientWidth
-  height = propHeight || el.value!.clientHeight
+  width = propWidth || Math.floor(el.value!.clientWidth)
+  height = propHeight || Math.floor(el.value!.clientHeight)
   // 因为上面有可能会修改宽高导致绘画颜色无法设置上去
   // 使用nextTick等修改后的dom渲染完毕再绘画
   nextTick(() => {

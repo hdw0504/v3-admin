@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<Props>(), {
   lightColor: '#000000',
   darkColor: '#ffffff',
   isBackground: false,
-  pointFadeTime: 2000,
+  pointFadeTime: 3000,
   maxLength: 100,
   lineWidth: 0.3,
 })
@@ -41,14 +41,15 @@ const color = ref<string>('')
 
 function updateConfig() {
   // // 如果没有默认值获取dom的宽高
+
   if (isBackground) {
-    width = el.value!.clientWidth
-    height = el.value!.clientHeight
+    width = Math.floor(el.value!.clientWidth)
+    height = Math.floor(el.value!.clientHeight)
     maxLength = Math.max(maxLength, width / 4, height / 4)
   }
   else {
-    width = propWidth || el.value!.clientWidth
-    height = propHeight || el.value!.clientHeight
+    width = propWidth || Math.floor(el.value!.clientWidth)
+    height = propHeight || Math.floor(el.value!.clientHeight)
     // 如果没给默认值
     maxLength = propMaxLength === 100 ? Math.max(maxLength, width / 4, height / 4) : propMaxLength
   }
