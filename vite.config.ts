@@ -111,7 +111,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         dts: true,
         resolvers: [
-          ElementPlusResolver(),
+          ElementPlusResolver({
+            importStyle: 'sass',
+          }),
           IconsResolver({
             alias: {
               // park: 'icon-park',
