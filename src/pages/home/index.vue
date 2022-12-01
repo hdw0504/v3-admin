@@ -12,8 +12,8 @@ const svgs = [
   },
   {
     width: '26',
-    src: 'https://element-plus.gitee.io/images/element-plus-logo-small.svg',
-    href: 'https://element-plus.gitee.io/zh-CN/',
+    src: 'https://element-plus.org/images/element-plus-logo-small.svg',
+    href: 'https://element-plus.org/zh-CN/',
   },
   {
     width: '24',
