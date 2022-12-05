@@ -69,7 +69,7 @@ whenever(enter, () => {
   <div>
     <ElForm ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
       <el-form-item prop="username">
-        <el-input v-model="loginForm.username" placeholder="用户名：admin / user">
+        <el-input v-model="loginForm.username" placeholder="用户名：admin">
           <template #prefix>
             <el-icon>
               <i-ep-user />
