@@ -89,23 +89,23 @@ transformers: [
 ### Pinia
 使用 `setup store` 替代 `option store (vuex)` 的写法 [setup-stores](https://pinia.vuejs.org/zh/core-concepts/#setup-stores)\
 官网话术：\
-在 _Setup Store_ 中：\
+在 _Setup Store_ 中：
 - `ref()` 就是 `state`
 - `computed()` 就是 `getters`
 - `function()` 就是 `actions`
 
-Setup store 比 Option Store 带来了更多的灵活性，因为你可以在一个 store 内创建侦听器，并自由地使用任何组合式函数。==不过，请记住，使用组合式函数会让 SSR 变得更加复杂。==
+Setup store 比 Option Store 带来了更多的灵活性，因为你可以在一个 store 内创建侦听器，并自由地使用任何组合式函数。**不过，请记住，使用组合式函数会让 SSR 变得更加复杂。**
 
 
 ### Element Plus
 主题配置参考
-[element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
-[elment plus 自定义主题文档](https://element-plus.gitee.io/zh-CN/guide/theming.html)
-**本项目不支持直接在页面配置主题颜色 (意思就是不支持动态配置)**
-**支持配置css颜色修改主题色 (暗黑模式和默认模式可使用不同主题色)**
-`styles/element/dark.scss` => 修改暗黑主题色配置
-`styles/element/index.scss` => 修改默认主题色配置
-`styles/element.scss` => 修改全局 element 组件样式
+[element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)\
+[elment plus 自定义主题文档](https://element-plus.gitee.io/zh-CN/guide/theming.html)\
+**本项目不支持直接在页面配置主题颜色 (意思就是不支持动态配置)**\
+**支持配置css颜色修改主题色 (暗黑模式和默认模式可使用不同主题色)**\
+`styles/element/dark.scss` => 修改暗黑主题色配置\
+`styles/element/index.scss` => 修改默认主题色配置\
+`styles/element.scss` => 修改全局 element 组件样式\
 `styles/root.css` => 自定义全局css变量
 
 
