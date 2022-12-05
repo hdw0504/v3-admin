@@ -35,7 +35,7 @@ const svgs = [
 
 <template>
   <div class="card-full" relative flex flex-col justify-center items-center gap-8>
-    <Plum is-background class="absolute top-0 left-0 w-full h-full opacity-20" />
+    <Plum is-background class="opacity-20" />
 
     <div text-6xl m-t--40>
       welcome!

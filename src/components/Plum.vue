@@ -187,13 +187,14 @@ watch([isDark, isFullscreen], () => {
 </script>
 
 <template>
-  <div ref="el" :class="{ 'bg-canvas': isBackground }" pointer-events-none>
+  <div ref="el" :class="{ 'bg-canvas': isBackground }" flex pointer-events-none>
     <canvas ref="canvasEl" :width="width" :height="height" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .bg-canvas {
+  --at-apply: absolute top-0 left-0 w-full h-full;
   -webkit-mask-image: radial-gradient(transparent 30%, currentcolor);
   --webkit-mask-image: radial-gradient(transparent 30%, currentcolor);
 }
