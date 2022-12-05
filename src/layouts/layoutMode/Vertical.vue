@@ -19,9 +19,9 @@ const { getMenuList } = storeToRefs(AuthStore())
   <el-container w-full h-full min-w-740px>
     <el-aside>
       <div class="menu" :class="[themeConfig.isCollapse ? 'w-[var(--menu-hide)]' : 'w-[var(--menu-show)]']">
-        <div flex justify-center items-center box-border class="h-[var(--header-height)] b-b b-b-[#414243]">
+        <div flex justify-center items-center box-border b-b="~ [#414243]" h="[var(--header-height)]">
           <img src="@/assets/images/logo.svg" alt="logo">
-          <span v-show="!themeConfig.isCollapse" m-l-2 text-8 font-bold truncate class="text-[#dadada]">wink</span>
+          <span v-show="!themeConfig.isCollapse" m-l-2 font-bold truncate text="8 [#dadada]">wink</span>
         </div>
         <el-scrollbar>
           <el-menu
@@ -67,24 +67,12 @@ const { getMenuList } = storeToRefs(AuthStore())
   --at-apply: flex items-center justify-between box-border dark:bg-[var(--el-bg-color)] b-b b-b-[var(--border-color)];
 }
 .el-main{
-  --at-apply: bg-[var(--el-bg-color-page)] box-border p-10px overflow-x-hidden;
+  --at-apply: bg-[var(--main-bg-color)] box-border p-10px overflow-x-hidden;
   &::-webkit-scrollbar {
-    --at-apply: bg-[var(--el-bg-color-page)];
+    --at-apply: bg-[var(--main-bg-color)];
   }
 }
 .el-footer{
   --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--border-color)];
-}
-:deep(.el-menu-item.is-active) {
-  background: #060708;
-  &::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    content: "";
-    background: var(--el-color-primary);
-  }
 }
 </style>

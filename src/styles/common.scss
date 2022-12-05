@@ -24,7 +24,7 @@
 
 // card 卡片默认样式 使用scss继承
 %card-common {
-  --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-bg-color)] shadow-sm;
+  --at-apply: box-border overflow-x-hidden p-20px b rd b-[var(--border-color)] bg-[var(--main-card-bg-color)] shadow-sm;
 }
 // 自适应 超过最大就滚动
 .card {

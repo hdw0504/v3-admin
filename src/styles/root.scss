@@ -4,15 +4,17 @@
   --header-padding: 0 15px;
 
   --tabs-height: 40px;
-
+  // 侧边menu
   --menu-hide: 56px;
   --menu-show: 210px;
-  --menu-bg-color: #191a20;
+  --menu-bg-color: #141414;
   --menu-bg-hover-color: #14151a;
+  --menu-bg-active-color: #14151a;
   --menu-text-color: #bdbdc0;
   --menu-text-active-color: #ffffff;
-
-  --main-bg-color: #ffffff;
+  // 中心内容区
+  --main-bg-color: var(--el-bg-color-page); // #f2f3f5
+  --main-card-bg-color: var(--el-bg-color); // #ffffff
 
   --footer-height: 30px;
   // el components
@@ -24,5 +26,6 @@
 :root.dark {
   --menu-bg-color: var(--el-bg-color);
   --menu-bg-hover-color: #0d0d0d;
-  --main-bg-color: var(--el-bg-color);
+  // --main-bg-color: var(--el-bg-color-page); // #0a0a0a
+  // --main-card-bg-color: var(--el-bg-color); // #141414
 }
