@@ -20,7 +20,7 @@ defineExpose({
 </script>
 
 <template>
-  <div>
+  <div mb-2>
     Im child expose
   </div>
 </template>

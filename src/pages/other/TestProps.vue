@@ -32,7 +32,7 @@ const changeText = () => {
 </script>
 
 <template>
-  <div>
+  <div flex gap-2 flex-col>
     <el-input :model-value="modelValue" @input="inputChange" />
     <el-input :model-value="name" @input="emit('update:name', $event)">
       <template #append>

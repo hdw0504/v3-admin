@@ -11,7 +11,7 @@ const { provideInp: val, provideChange } = inject<injectProps>('testInject', {
 </script>
 
 <template>
-  <div>
+  <div mt-2>
     child inject : {{ val }}
     <el-button @click="provideChange">
       change
