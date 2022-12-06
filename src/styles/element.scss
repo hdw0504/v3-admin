@@ -1,6 +1,7 @@
 // 主题样式
 // 加上root是为了优先级更高
 :root {
+
   // layout
   .el-header {
     --el-header-padding: var(--header-padding);
@@ -16,11 +17,17 @@
     --el-menu-hover-bg-color: var(--menu-bg-hover-color);
     --el-menu-text-color: var(--menu-text-color);
     --el-menu-active-color: var(--menu-text-active-color);
-    .el-menu-item.is-active{
-      --at-apply: bg-[var(--menu-bg-active-color)];
-      // 自定义选中交互
-      &::before {
-        --at-apply: absolute top-0 left-0 bottom-0 w-4px content-none bg-[var(--el-color-primary)];
+
+    .el-menu-item {
+      --at-apply: transition-none;
+
+      &.is-active {
+        --at-apply: bg-[var(--menu-bg-active-color)];
+
+        // 自定义选中交互
+        &::before {
+          --at-apply: absolute top-0 left-0 bottom-0 w-4px content-none bg-[var(--el-color-primary)];
+        }
       }
     }
   }
@@ -31,6 +38,7 @@
 
   // 抽屉
   .el-drawer {
+
     // 重写抽屉顶部样式 兼容暗黑模式
     .el-drawer__header {
       --at-apply: box-border m-0 p-y-0 h-[var(--header-height)] b-b b-b-[var(--border-color)] color-current;

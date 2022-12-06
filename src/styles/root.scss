@@ -1,4 +1,6 @@
 :root {
+  --logo-color: currentcolor; // #dadada; // currentcolor; // var(--el-color-primary)
+  --logo-border-color: var(--el-border-color-light); // #414243; // var(--el-border-color-light)
   // layout
   --header-height: 55px;
   --header-padding: 0 15px;
@@ -7,11 +9,11 @@
   // 侧边menu
   --menu-hide: 56px;
   --menu-show: 210px;
-  --menu-bg-color: #141414;
-  --menu-bg-hover-color: #14151a;
-  --menu-bg-active-color: #14151a;
-  --menu-text-color: #bdbdc0;
-  --menu-text-active-color: #ffffff;
+  --menu-bg-color: var(--el-bg-color); // #141414; // var(--el-bg-color)
+  --menu-bg-hover-color: var(--el-bg-color-page); // #14151a; // var(--el-bg-color-page)
+  --menu-bg-active-color: var(--el-bg-color-page); // #14151a; // var(--el-bg-color-page)
+  --menu-text-color: var(--el-text-color-primary); // #bdbdc0; // var(--el-text-color-primary)
+  --menu-text-active-color: var(--el-color-primary); // #ffffff; // var(--el-color-primary)
   // 中心内容区
   --main-bg-color: var(--el-bg-color-page); // #f2f3f5
   --main-card-bg-color: var(--el-bg-color); // #ffffff
@@ -26,6 +28,6 @@
 :root.dark {
   --menu-bg-color: var(--el-bg-color);
   --menu-bg-hover-color: #0d0d0d;
-  // --main-bg-color: var(--el-bg-color-page); // #0a0a0a
-  // --main-card-bg-color: var(--el-bg-color); // #141414
+  // --main-bg-color: var(--el-bg-color-page); // #0a0a0a; // var(--el-bg-color-page)
+  // --main-card-bg-color: var(--el-bg-color); // #141414; // var(--el-bg-color)
 }

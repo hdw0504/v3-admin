@@ -19,9 +19,9 @@ const { getMenuList } = storeToRefs(AuthStore())
   <el-container w-full h-full min-w-740px>
     <el-aside>
       <div class="menu" :class="[themeConfig.isCollapse ? 'w-[var(--menu-hide)]' : 'w-[var(--menu-show)]']">
-        <div flex justify-center items-center box-border b-b="~ [#414243]" h="[var(--header-height)]">
+        <div flex justify-center items-center box-border b-b="~ [var(--logo-border-color)]" h="[var(--header-height)]">
           <img src="@/assets/images/logo.svg" alt="logo">
-          <span v-show="!themeConfig.isCollapse" m-l-2 font-bold truncate text="8 [#dadada]">wink</span>
+          <span v-show="!themeConfig.isCollapse" m-l-2 font-bold truncate text="8 [var(--logo-color)]">wink</span>
         </div>
         <el-scrollbar>
           <el-menu
