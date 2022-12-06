@@ -12,10 +12,16 @@ declare global {
   const ElForm: typeof import('element-plus/es')['ElForm']
   const ElFormItem: typeof import('element-plus/es')['ElFormItem']
   const ElInput: typeof import('element-plus/es')['ElInput']
+  const ElInputNumber: typeof import('element-plus/es')['ElInputNumber']
   const ElLoading: typeof import('element-plus/es')['ElLoading']
   const ElMessage: typeof import('element-plus/es')['ElMessage']
   const ElMessageBox: typeof import('element-plus/es')['ElMessageBox']
   const ElNotification: typeof import('element-plus/es')['ElNotification']
+  const ElRadio: typeof import('element-plus/es')['ElRadio']
+  const ElRate: typeof import('element-plus/es')['ElRate']
+  const ElSwitch: typeof import('element-plus/es')['ElSwitch']
+  const ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
+  const ElTimeSelect: typeof import('element-plus/es')['ElTimeSelect']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -311,10 +317,16 @@ declare module 'vue' {
     readonly ElForm: UnwrapRef<typeof import('element-plus/es')['ElForm']>
     readonly ElFormItem: UnwrapRef<typeof import('element-plus/es')['ElFormItem']>
     readonly ElInput: UnwrapRef<typeof import('element-plus/es')['ElInput']>
+    readonly ElInputNumber: UnwrapRef<typeof import('element-plus/es')['ElInputNumber']>
     readonly ElLoading: UnwrapRef<typeof import('element-plus/es')['ElLoading']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly ElMessageBox: UnwrapRef<typeof import('element-plus/es')['ElMessageBox']>
     readonly ElNotification: UnwrapRef<typeof import('element-plus/es')['ElNotification']>
+    readonly ElRadio: UnwrapRef<typeof import('element-plus/es')['ElRadio']>
+    readonly ElRate: UnwrapRef<typeof import('element-plus/es')['ElRate']>
+    readonly ElSwitch: UnwrapRef<typeof import('element-plus/es')['ElSwitch']>
+    readonly ElTimePicker: UnwrapRef<typeof import('element-plus/es')['ElTimePicker']>
+    readonly ElTimeSelect: UnwrapRef<typeof import('element-plus/es')['ElTimeSelect']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
