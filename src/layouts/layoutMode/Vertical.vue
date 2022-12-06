@@ -55,7 +55,8 @@ const { getMenuList } = storeToRefs(AuthStore())
 
 <style lang="scss" scoped>
 .el-aside{
- --at-apply: overflow-inherit box-border w-auto\! bg-[var(--menu-bg-color)] b-r b-r-[var(--menu-bg-color)] dark:b-r-[var(--border-color)];
+ --at-apply: overflow-inherit box-border w-auto\! bg-[var(--menu-bg-color)];
+ --at-apply: b-r b-r-[var(--menu-border-right-color)];
  .menu{
   --at-apply: flex flex-col h-full transition-width transition-ease transition-duration-300;
     .el-scrollbar {
