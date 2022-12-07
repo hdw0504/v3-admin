@@ -3,25 +3,32 @@ import { createApp } from 'vue'
 // iconfont css
 // import "@/assets/iconfont/iconfont.scss";
 // font css
-// import "@/assets/fonts/font.scss";
+import '@/assets/fonts/index.scss'
 // element icons => ni @element-plus/icons-vue
 // import * as Icons from '@element-plus/icons-vue'
-import App from './App.vue'
-// custom directives
-import directives from '@/directives/index'
-// vue Router
-import router from '@/routers/index'
-// vue i18n
-// import I18n from "@/languages/index";
-// pinia store
-import pinia from '@/stores/index'
-// errorHandler
-import errorHandler from '@/utils/errorHandler'
-// 可修改主题的 element 样式 (内置暗黑模式)
-import '@/styles/index.scss'
+
 // 看自己心情要不要删掉tailwind
 import '@unocss/reset/tailwind.css'
+// unocss
 import 'uno.css'
+// 可修改主题的 element 样式 (内置暗黑模式)
+import '@/styles/index.scss'
+// custom element css
+import '@/styles/element.scss'
+// css common style sheet
+import '@/styles/common.scss'
+
+import App from './App.vue'
+// pinia store
+import pinia from '@/stores/index'
+// vue Router
+import router from '@/routers/index'
+// errorHandler
+import errorHandler from '@/utils/errorHandler'
+// custom directives
+import directives from '@/directives/index'
+// vue i18n
+// import I18n from "@/languages/index";
 
 const app = createApp(App)
 
@@ -34,4 +41,4 @@ app.config.errorHandler = errorHandler
 //   app.component(key, component)
 // })
 
-app.use(router).use(pinia).use(directives).mount('#app')
+app.use(pinia).use(router).use(directives).mount('#app')
