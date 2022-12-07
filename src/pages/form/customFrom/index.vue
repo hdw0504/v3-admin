@@ -113,7 +113,8 @@ const components: FormPro.Components[] = [
 const model = ref<Record<string, any>>({
   username: '恁爹',
   nickname: 'cxk',
-  grade: 1,
+  grade: '一年级',
+  interest: ['唱歌', '跳舞', '说唱', '篮球'],
 })
 </script>
 
