@@ -16,10 +16,12 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import Unocss from 'unocss/vite'
 import { wrapperEnv } from './src/utils/getEnv'
+import { PreloadElementCss } from './src/config/preload'
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd())
   const viteEnv = wrapperEnv(env)
+
   return {
     base: './',
     resolve: {
@@ -40,7 +42,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       host: '0.0.0.0',
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
-      cors: true,
+      // cors: true,
       // 代理跨域（mock 不需要配置跨域，直接能访问，这里只是个示例）
       proxy: {
         '/api': {
@@ -64,22 +66,22 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       viteEnv.VITE_REPORT && visualizer(),
       // gzip compress
       viteEnv.VITE_BUILD_GZIP
-      && viteCompression({
-        verbose: true,
-        disable: false,
-        threshold: 10240,
-        algorithm: 'gzip',
-        ext: '.gz',
-      }),
+     && viteCompression({
+       verbose: true,
+       disable: false,
+       threshold: 10240,
+       algorithm: 'gzip',
+       ext: '.gz',
+     }),
       /**
-       * name 可以写在 script 标签上
-       * 当项目使用 keep-alive 时，可搭配组件name进行缓存过滤
-       * DOM 做递归组件时需要
-       * vue-devtools 调试工具里显示的组见名称是由 vue 中组件 name 决定的
-       *
-       * 在 vue 3.2.34 或以上的版本中，使用 <script setup> 的单文件组件会自动根据文件名生成对应的 name 选项
-       * 即使是在配合 <KeepAlive> 使用时也无需再手动声明。
-       * */
+      * name 可以写在 script 标签上
+      * 当项目使用 keep-alive 时，可搭配组件name进行缓存过滤
+      * DOM 做递归组件时需要
+      * vue-devtools 调试工具里显示的组见名称是由 vue 中组件 name 决定的
+      *
+      * 在 vue 3.2.34 或以上的版本中，使用 <script setup> 的单文件组件会自动根据文件名生成对应的 name 选项
+      * 即使是在配合 <KeepAlive> 使用时也无需再手动声明。
+      * */
       VueSetupExtend(),
 
       // https://github.com/antfu/unplugin-auto-import
@@ -106,13 +108,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: true,
+        include: [/\.vue$/, /\.vue\?vue/, /\.vue\?v=/, /\.[jt]sx$/],
         resolvers: [
           ElementPlusResolver({
             importStyle: 'sass',
           }),
           IconsResolver({
             alias: {
-              // park: 'icon-park',
+            // park: 'icon-park',
             },
             customCollections: ['icons'],
           }),
@@ -127,7 +130,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         customCollections: {
           icons: FileSystemIconLoader(
             './src/assets/icons',
-            // svg => svg.replace(/^<svg /, '<svg fill="currentColor" '),
+          // svg => svg.replace(/^<svg /, '<svg fill="currentColor" '),
           ),
         },
       }),
@@ -163,6 +166,18 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         // },
       },
     },
+    // preload modules
+    optimizeDeps: {
+      include: [
+        'vue',
+        'vue-router',
+        'axios',
+        'pinia',
+        'mitt',
+        ...PreloadElementCss(),
+      ],
+    },
+
     // https://github.com/vitest-dev/vitest
     test: {
       globals: true,
