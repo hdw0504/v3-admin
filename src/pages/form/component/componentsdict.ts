@@ -5,7 +5,20 @@
 export const componentsDict = {
   ElForm,
   ElFormItem,
+  ElCheckbox,
+  ElCheckboxGroup,
   ElInput,
+  ElInputNumber,
+  ElRadio,
+  ElRadioGroup,
+  ElRate,
+  ElSelect,
+  ElOption,
+  // ElSlider,
+  ElSwitch,
+  ElTimePicker,
+  ElTimeSelect,
+  // ElUpload
 }
 
 export type ComponentsName = keyof typeof componentsDict

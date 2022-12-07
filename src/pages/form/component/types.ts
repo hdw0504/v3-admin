@@ -7,6 +7,8 @@ interface basicAttrs {
   style?: any
 }
 
+export type getAttrs<T extends ComponentsName> = Partial<GlobalComponents[T]>
+
 // 配置化表单
 export namespace FormPro{
   /**
@@ -21,7 +23,6 @@ export namespace FormPro{
   export type FormItem = Partial<Exclude<FormItemProps, 'prop'>> & basicAttrs & {
     prop: string
   }
-
   /**
    * @description 展示的组件配置项
    */
@@ -35,6 +36,14 @@ export namespace FormPro{
     /**
      * @description component 属性
      */
-    attrs: Partial<GlobalComponents[ComponentsName]>
+    attrs: getAttrs<ComponentsName>
+    /**
+     * @description 有孩子节点的属性值
+     */
+    options?: { label?: any; value?: any }[]
+    /**
+     * @description 自定义组件的插槽key
+     */
+    slotKey?: string
   }
 }

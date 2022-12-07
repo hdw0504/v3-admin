@@ -9,6 +9,8 @@ declare global {
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
+  const ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
+  const ElCheckboxGroup: typeof import('element-plus/es')['ElCheckboxGroup']
   const ElForm: typeof import('element-plus/es')['ElForm']
   const ElFormItem: typeof import('element-plus/es')['ElFormItem']
   const ElInput: typeof import('element-plus/es')['ElInput']
@@ -17,8 +19,11 @@ declare global {
   const ElMessage: typeof import('element-plus/es')['ElMessage']
   const ElMessageBox: typeof import('element-plus/es')['ElMessageBox']
   const ElNotification: typeof import('element-plus/es')['ElNotification']
+  const ElOption: typeof import('element-plus/es')['ElOption']
   const ElRadio: typeof import('element-plus/es')['ElRadio']
+  const ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
   const ElRate: typeof import('element-plus/es')['ElRate']
+  const ElSelect: typeof import('element-plus/es')['ElSelect']
   const ElSwitch: typeof import('element-plus/es')['ElSwitch']
   const ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
   const ElTimeSelect: typeof import('element-plus/es')['ElTimeSelect']
@@ -314,6 +319,8 @@ declare module 'vue' {
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly ElCheckbox: UnwrapRef<typeof import('element-plus/es')['ElCheckbox']>
+    readonly ElCheckboxGroup: UnwrapRef<typeof import('element-plus/es')['ElCheckboxGroup']>
     readonly ElForm: UnwrapRef<typeof import('element-plus/es')['ElForm']>
     readonly ElFormItem: UnwrapRef<typeof import('element-plus/es')['ElFormItem']>
     readonly ElInput: UnwrapRef<typeof import('element-plus/es')['ElInput']>
@@ -322,8 +329,11 @@ declare module 'vue' {
     readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly ElMessageBox: UnwrapRef<typeof import('element-plus/es')['ElMessageBox']>
     readonly ElNotification: UnwrapRef<typeof import('element-plus/es')['ElNotification']>
+    readonly ElOption: UnwrapRef<typeof import('element-plus/es')['ElOption']>
     readonly ElRadio: UnwrapRef<typeof import('element-plus/es')['ElRadio']>
+    readonly ElRadioGroup: UnwrapRef<typeof import('element-plus/es')['ElRadioGroup']>
     readonly ElRate: UnwrapRef<typeof import('element-plus/es')['ElRate']>
+    readonly ElSelect: UnwrapRef<typeof import('element-plus/es')['ElSelect']>
     readonly ElSwitch: UnwrapRef<typeof import('element-plus/es')['ElSwitch']>
     readonly ElTimePicker: UnwrapRef<typeof import('element-plus/es')['ElTimePicker']>
     readonly ElTimeSelect: UnwrapRef<typeof import('element-plus/es')['ElTimeSelect']>
