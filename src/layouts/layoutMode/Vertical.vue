@@ -74,6 +74,6 @@ const { getMenuList } = storeToRefs(AuthStore())
   }
 }
 .el-footer{
-  --at-apply: box-border color-fade font-sans flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--border-color)];
+  --at-apply: box-border color-fade flex justify-center items-center text-sm dark:bg-[var(--el-bg-color)] b-t b-t-[var(--border-color)];
 }
 </style>

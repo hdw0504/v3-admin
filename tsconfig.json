@@ -19,7 +19,8 @@
       "vite/client",
       "element-plus/global",
       "vitest/globals",
-      "unplugin-icons/types/vue"
+      "unplugin-icons/types/vue",
+      "pinia-plugin-persist"
     ],
     // 模块名到基于 baseUrl 的路径映射的列表。
     "paths": {
