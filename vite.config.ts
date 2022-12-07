@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import type { ConfigEnv, UserConfig } from 'vite'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import viteCompression from 'vite-plugin-compression'
@@ -55,13 +56,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         // 响应式语法糖
         reactivityTransform: true,
       }),
-
-      // 使用 svg 图标
-      // createSvgIconsPlugin({
-      //   iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
-      //   symbolId: 'icon-[dir]-[name]',
-      // }),
-
+      // * vite 可以使用 jsx/tsx 语法
+      vueJsx(),
       // 自动引入路由 https://github.com/hannoeru/vite-plugin-pages
       // Pages(),
       // 是否生成包预览(分析依赖包大小,方便做优化处理)
