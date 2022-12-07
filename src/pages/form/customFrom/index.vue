@@ -34,21 +34,19 @@ const components: FormPro.Components[] = [
   {
     formItem: {
       label: '昵称',
-      prop: 'nickName',
+      prop: 'nickname',
       required: true,
     },
     component: 'ElInput',
     attrs: {
       clearable: true,
       placeholder: '请输入用户名',
-      prefixIcon: Search,
-      suffixIcon: Calendar,
     },
   },
   {
     formItem: {
-      label: '开关',
-      prop: 'num',
+      label: '年龄',
+      prop: 'age',
     },
     component: 'ElInputNumber',
     attrs: {
@@ -66,7 +64,7 @@ const components: FormPro.Components[] = [
     component: 'ElSelect',
     attrs: {
       clearable: true,
-      placeholder: '请输入邮箱',
+      placeholder: '请选择',
       // class: 'w-100!',
     },
     options: [
@@ -113,6 +111,7 @@ const components: FormPro.Components[] = [
 const model = ref<Record<string, any>>({
   username: '恁爹',
   nickname: 'cxk',
+  age: 6,
   grade: '一年级',
   interest: ['唱歌', '跳舞', '说唱', '篮球'],
 })
