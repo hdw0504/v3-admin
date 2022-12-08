@@ -109,6 +109,13 @@ const elementFloder = [
   // 'visual-hidden',
 ]
 
+const elementOther = [
+  'element-plus/es',
+  'element-plus/es/locale/lang/zh-cn',
+]
+
+const componentCss = elementFloder.map(name => `element-plus/es/components/${name}/style/index`)
+
 export function PreloadElementCss() {
-  return elementFloder.map(name => `element-plus/es/components/${name}/style/index`)
+  return [...elementOther, ...componentCss]
 }

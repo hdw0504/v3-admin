@@ -169,10 +169,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     // preload modules
     optimizeDeps: {
       include: [
-        'vue',
-        'vue-router',
-        'axios',
-        'pinia',
         'mitt',
         ...PreloadElementCss(),
       ],

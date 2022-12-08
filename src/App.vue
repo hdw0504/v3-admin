@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 // import en from 'element-plus/es/locale/lang/en'
 
 import { GlobalStore } from '@/stores'
@@ -15,7 +15,7 @@ useTitle(import.meta.env.VITE_GLOB_APP_TITLE)
 </script>
 
 <template>
-  <el-config-provider :button="config" :size="assemblySize">
+  <el-config-provider :button="config" :size="assemblySize" :locale="zhCn">
     <suspense>
       <template #default>
         <router-view />
