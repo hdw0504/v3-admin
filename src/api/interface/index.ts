@@ -42,13 +42,13 @@ export namespace Login {
 // * 用户管理模块
 export namespace User {
   export interface ReqGetUserParams extends ReqPage {
-    username: string
-    gender: number
-    idCard: string
-    email: string
-    address: string
-    createTime: string[]
-    status: number
+    username?: string
+    gender?: number
+    idCard?: string
+    email?: string
+    address?: string
+    createTime?: string[]
+    status?: number
   }
   export interface ResUserList {
     id: string
