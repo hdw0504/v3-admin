@@ -7,7 +7,7 @@ interface basicAttrs {
   style?: any
 }
 
-export type getAttrs<T extends ComponentsName> = Partial<GlobalComponents[T]>
+export type getAttrs<T extends ComponentsName> = InstanceType<GlobalComponents[T]>['$props']
 
 // 配置化表单
 export namespace FormPro{
