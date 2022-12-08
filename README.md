@@ -44,7 +44,10 @@ github: https://github.com/hdw0504/el-plus-nuxt3
 ### TODO:
 - 打包优化 <!-- - [项目打包优化实战之-视图分析](https://blog.csdn.net/g18204746769/article/details/127431733) -->
   - 使用按需注册icon，包体积减少200kb
-- canvas动图自适应背景
+- 开发优化
+  - 预加载样式和必备依赖
+  - 无缓存时加载太久（也许是 autoimport + scss 主题导致）
+- ~~定制不同颜色的背景和主题~~
 
 ### unocss
 如何 import 别的css文件（里面包含unocss的--at-apply）\
