@@ -16,14 +16,7 @@ useTitle(import.meta.env.VITE_GLOB_APP_TITLE)
 
 <template>
   <el-config-provider :button="config" :size="assemblySize" :locale="zhCn">
-    <suspense>
-      <template #default>
-        <router-view />
-      </template>
-      <template #fallback>
-        <i-ep-loading />
-      </template>
-    </suspense>
+    <router-view />
   </el-config-provider>
 </template>
 

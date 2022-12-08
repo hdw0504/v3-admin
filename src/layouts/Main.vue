@@ -19,11 +19,14 @@ mittBus.on('refresh', () => {
 
 <template>
   <router-view v-slot="{ Component, route }">
-    <transition appear name="fade-transform" mode="out-in">
-      <keep-alive v-if="isRouterRefresh" :include="getKeepAliveRouter">
-        <component :is="Component" :key="route.path" />
-      </keep-alive>
-    </transition>
+    <!-- 刷新页面并不会有load？ -->
+    <load-page>
+      <transition appear name="fade-transform" mode="out-in">
+        <keep-alive v-if="isRouterRefresh" :include="getKeepAliveRouter">
+          <component :is="Component" :key="route.path" />
+        </keep-alive>
+      </transition>
+    </load-page>
   </router-view>
 </template>
 
