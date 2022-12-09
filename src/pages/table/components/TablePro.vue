@@ -36,6 +36,7 @@ function defaltColumnProp(column?: ColumnProps) {
   return {
     ...column,
     align: column?.align ?? 'center',
+    showOverflowTooltip: column?.align ?? true,
   }
 }
 

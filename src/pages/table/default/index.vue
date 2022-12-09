@@ -121,64 +121,110 @@ function handleCheckAllChange(val: CheckboxValueType) {
 
 // 过滤后的数据
 const filterColumn = useArrayFilter(columns, i => selectColumns.value.includes(i.prop))
+
+function rowSpanMethod({ row, column, rowIndex, columnIndex }: any) {
+  if (rowIndex % 2 === 0) {
+    if (columnIndex === 3)
+      return [1, 2]
+    else if (columnIndex === 4)
+      return [0, 0]
+  }
+}
+function colSpanMethod({ row, column, rowIndex, columnIndex }: any) {
+  if (columnIndex === 4)
+    return rowIndex % 2 ? { rowspan: 0, colspan: 0 } : { rowspan: 2, colspan: 1 }
+}
+
+const spanMethodType = ref<0 | 1 | 2>(0)
+const spanMethod = computed(() => {
+  switch (spanMethodType.value) {
+    case 0:
+      return undefined
+    case 1:
+      return rowSpanMethod
+    case 2:
+      return colSpanMethod
+  }
+})
 </script>
 
 <template>
   <div class="card-full">
-    <div mb-4>
-      <el-form inline>
-        <el-form-item>
-          <el-popover placement="bottom" trigger="click">
-            <template #reference>
-              <el-button> 展示列 </el-button>
-            </template>
-            <div>
-              <el-checkbox
-                v-model="selectAll"
-                :indeterminate="isIndeterminate"
-                @change="handleCheckAllChange"
-              >
-                全选
-              </el-checkbox>
-              <el-checkbox-group v-model="selectColumns">
-                <el-checkbox v-for="col in columns" :key="col.prop" :label="col.prop">
-                  {{ col.label }}
-                </el-checkbox>
-              </el-checkbox-group>
-            </div>
-          </el-popover>
-        </el-form-item>
-        <el-form-item label="多选">
-          <el-switch v-model="selection" />
-        </el-form-item>
-        <el-form-item label="更多">
-          <el-switch v-model="expand" />
-        </el-form-item>
-        <el-form-item>
-          <el-popover placement="bottom" trigger="click" :width="500">
-            <template #reference>
-              <el-button> columns 配置项 </el-button>
-            </template>
-            <div flex gap-4>
-              <pre class="card">{{ columns.slice(0, columns.length / 2 + 1) }}</pre>
-              <pre class="card">{{ columns.slice(columns.length / 2 + 1) }}</pre>
-            </div>
-          </el-popover>
-        </el-form-item>
-        <el-form-item>
-          <el-popover placement="bottom" trigger="click" :width="250">
-            <template #reference>
-              <el-button> operation 配置项 </el-button>
-            </template>
-            <div>
-              <pre class="card">{{ operation }}</pre>
-            </div>
-          </el-popover>
-        </el-form-item>
-      </el-form>
-    </div>
+    <el-form inline>
+      <el-form-item>
+        <el-popover placement="bottom" trigger="click" :width="500">
+          <template #reference>
+            <el-button> columns 配置项 </el-button>
+          </template>
+          <div flex gap-4>
+            <pre class="card">{{ columns.slice(0, columns.length / 2 + 1) }}</pre>
+            <pre class="card">{{ columns.slice(columns.length / 2 + 1) }}</pre>
+          </div>
+        </el-popover>
+      </el-form-item>
 
-    <TablePro :data="tableData" :selection="selection" :expand="expand" :columns="filterColumn" :operation="operation">
+      <el-form-item>
+        <el-popover placement="bottom" trigger="click" :width="250">
+          <template #reference>
+            <el-button> operation 配置项 </el-button>
+          </template>
+          <div>
+            <pre class="card">{{ operation }}</pre>
+          </div>
+        </el-popover>
+      </el-form-item>
+      <!-- 展示列 -->
+      <el-form-item>
+        <el-popover placement="bottom" trigger="click">
+          <template #reference>
+            <el-button> 展示列 </el-button>
+          </template>
+          <div>
+            <el-checkbox
+              v-model="selectAll"
+              :indeterminate="isIndeterminate"
+              @change="handleCheckAllChange"
+            >
+              全选
+            </el-checkbox>
+            <el-checkbox-group v-model="selectColumns">
+              <el-checkbox v-for="col in columns" :key="col.prop" :label="col.prop">
+                {{ col.label }}
+              </el-checkbox>
+            </el-checkbox-group>
+          </div>
+        </el-popover>
+      </el-form-item>
+
+      <el-form-item label="多选">
+        <el-switch v-model="selection" />
+      </el-form-item>
+
+      <el-form-item label="更多">
+        <el-switch v-model="expand" />
+      </el-form-item>
+
+      <el-form-item label="合并">
+        <el-radio-group v-model="spanMethodType">
+          <el-radio :label="0">
+            none
+          </el-radio>
+          <el-radio :label="1">
+            row
+          </el-radio>
+          <el-radio :label="2">
+            col
+          </el-radio>
+        </el-radio-group>
+      </el-form-item>
+    </el-form>
+
+    <TablePro
+      :data="tableData"
+      :selection="selection" :expand="expand"
+      :columns="filterColumn" :operation="operation"
+      :span-method="spanMethod"
+    >
       <template #expand="{ row }">
         <code>{{ row }}</code>
       </template>
