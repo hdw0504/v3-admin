@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup lang="tsx">
 import type { TableProps } from 'element-plus'
-import { commonIcons } from './connfig'
+import { commonIcons, defaltColumnProp } from './config'
 import type { ColumnProps, OperationProps } from './types'
 import { isArray, isString } from '@/utils/is'
 
@@ -31,15 +31,6 @@ const attrs = useAttrs()
 const slots = useSlots()
 console.log({ props, attrs, slots })
 
-// 默认行参数
-function defaltColumnProp(column?: ColumnProps) {
-  return {
-    ...column,
-    align: column?.align ?? 'center',
-    showOverflowTooltip: column?.align ?? true,
-  }
-}
-
 // 操作按钮
 function opIcon(icon: OperationProps['icon']) {
   if (isString(icon)) {
@@ -56,7 +47,10 @@ function opIcon(icon: OperationProps['icon']) {
     <slot />
 
     <!-- 单选和多选 -->
-    <el-table-column v-if="selection" :type="selection === 'single' ? 'index' : 'selection'" v-bind="defaltColumnProp()" />
+    <el-table-column
+      v-if="selection" :type="selection === 'single' ? 'index' : 'selection'"
+      v-bind="defaltColumnProp()"
+    />
 
     <!-- 扩展 -->
     <el-table-column v-if="expand" v-slot="scope" type="expand" label="#" v-bind="defaltColumnProp()">
@@ -67,7 +61,7 @@ function opIcon(icon: OperationProps['icon']) {
     <template v-for="column in columns" :key="column.prop">
       <!-- 其他 && 按钮 -->
       <el-table-column v-bind="defaltColumnProp(column)">
-        <!-- 表头 -->
+        <!-- header -->
         <template #header="scope">
           <template v-if="$slots[`${column.prop}Header`]">
             <slot :name="`${column.prop}Header`" v-bind="scope" />
@@ -77,20 +71,20 @@ function opIcon(icon: OperationProps['icon']) {
           </template>
         </template>
 
-        <!-- 表体内容 -->
+        <!-- default -->
         <template #default="scope">
-          <!-- 非操作插槽 -->
+          <!-- not op -->
           <template v-if="column.prop !== 'operation'">
-            <template v-if="$slots[column.prop]">
+            <template v-if="$slots[column.prop!]">
               <slot :name="column.prop" v-bind="scope" />
             </template>
 
             <template v-else>
-              {{ scope.row[column.prop] ?? '--' }}
+              {{ scope.row[column.prop!] ?? '--' }}
             </template>
           </template>
 
-          <!-- 操作特殊处理 -->
+          <!-- has op -->
           <template v-else-if="isArray(operation)">
             <template v-for="op in operation" :key="op.label">
               <el-button
@@ -108,6 +102,9 @@ function opIcon(icon: OperationProps['icon']) {
   </el-table>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+// 多选按钮不对齐
+:deep(.el-table-column--selection > .cell) {
+  justify-content: center;
+}
 </style>

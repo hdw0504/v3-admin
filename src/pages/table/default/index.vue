@@ -22,6 +22,16 @@ const columns: ColumnProps<User.ResUserList>[] = [
   {
     label: '性别',
     prop: 'gender',
+    // children: [
+    //   {
+    //     label: '性别',
+    //     prop: 'gender',
+    //   },
+    //   {
+    //     label: '年龄',
+    //     prop: 'age',
+    //   },
+    // ],
   },
   {
     label: '年龄',
@@ -105,9 +115,6 @@ const operation: OperationProps<User.ResUserList>[] = [
   },
 ]
 
-const selection = ref(true)
-const expand = ref(true)
-
 const selectColumns = ref(defaltColumns)
 const selectAll = computed({
   get: () => selectColumns.value.length === columns.length,
@@ -119,9 +126,25 @@ function handleCheckAllChange(val: CheckboxValueType) {
   selectColumns.value = val ? defaltColumns : []
 }
 
+// 多选和更多
+const selection = ref(true)
+const expand = ref(true)
+
 // 过滤后的数据
 const filterColumn = useArrayFilter(columns, i => selectColumns.value.includes(i.prop))
 
+// 合并
+const spanMethodType = ref<0 | 1 | 2>(0)
+const spanMethod = computed(() => {
+  switch (spanMethodType.value) {
+    case 0:
+      return undefined
+    case 1:
+      return rowSpanMethod
+    case 2:
+      return colSpanMethod
+  }
+})
 function rowSpanMethod({ row, column, rowIndex, columnIndex }: any) {
   if (rowIndex % 2 === 0) {
     if (columnIndex === 3)
@@ -134,18 +157,6 @@ function colSpanMethod({ row, column, rowIndex, columnIndex }: any) {
   if (columnIndex === 4)
     return rowIndex % 2 ? { rowspan: 0, colspan: 0 } : { rowspan: 2, colspan: 1 }
 }
-
-const spanMethodType = ref<0 | 1 | 2>(0)
-const spanMethod = computed(() => {
-  switch (spanMethodType.value) {
-    case 0:
-      return undefined
-    case 1:
-      return rowSpanMethod
-    case 2:
-      return colSpanMethod
-  }
-})
 </script>
 
 <template>
@@ -221,8 +232,8 @@ const spanMethod = computed(() => {
 
     <TablePro
       :data="tableData"
-      :selection="selection" :expand="expand"
       :columns="filterColumn" :operation="operation"
+      :selection="selection" :expand="expand"
       :span-method="spanMethod"
     >
       <template #expand="{ row }">
