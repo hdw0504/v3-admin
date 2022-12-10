@@ -1,6 +1,14 @@
 const toString = Object.prototype.toString
 
 /**
+ * @description: 获取值类型
+ * @return: 类型首字母大写
+ */
+export function typeIs(val: unknown) {
+  return toString.call(val).replace(/\[object (.*)\]/, '$1')
+}
+
+/**
  * @description: 判断值是否未某个类型
  */
 export function is(val: unknown, type: string) {
