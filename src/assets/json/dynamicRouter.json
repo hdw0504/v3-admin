@@ -71,6 +71,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/other/loop",
+          "name": "loop",
+          "component": "/other/loop/index",
+          "meta": {
+            "icon": "Box",
+            "title": "递归组件",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": true,
+            "isKeepAlive": true
+          }
         }
       ]
     },
