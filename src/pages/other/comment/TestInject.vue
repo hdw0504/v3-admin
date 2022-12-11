@@ -1,11 +1,9 @@
 <script setup lang="ts">
-interface injectProps {
-  provideInp: string
-  provideChange: Function
-}
+import { TestInjectionKey } from './injection-key'
+
 // 不加感叹号会有 undefined 类型，或者给 inject 第二个参数提供默认值
-const { provideInp: val, provideChange } = inject<injectProps>('testInject', {
-  provideInp: 'default value',
+const { provideInp: val, provideChange } = inject(TestInjectionKey, {
+  provideInp: ref('default value'),
   provideChange: () => {},
 })
 </script>
@@ -14,7 +12,7 @@ const { provideInp: val, provideChange } = inject<injectProps>('testInject', {
   <div mt-2>
     child inject : {{ val }}
     <el-button @click="provideChange">
-      change
+      click provide fn
     </el-button>
   </div>
 </template>

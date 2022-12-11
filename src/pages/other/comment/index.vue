@@ -4,6 +4,7 @@ import TestInject from './TestInject.vue'
 import TestExpose from './TestExpose.vue'
 import TestSlot from './TestSlot.vue'
 
+import { TestInjectionKey } from './injection-key'
 import MoonIcon from '~icons/ep/moon'
 
 // https://cn.vuejs.org/guide/typescript/composition-api.html
@@ -17,7 +18,7 @@ const provideChange = () => {
   provideInp.value = provideInp.value === 'provide' ? 'new provide' : 'provide'
 }
 // 用对象穿方便子组件拆
-provide('testInject', { provideInp, provideChange })
+provide(TestInjectionKey, { provideInp, provideChange })
 
 const testFn = ref<InstanceType<typeof TestExpose>>()
 </script>
