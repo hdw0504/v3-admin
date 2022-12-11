@@ -18,9 +18,11 @@ export type columnIcons = keyof typeof commonIcons | FunctionalComponent<SVGAttr
 
 // 默认行参数
 export function defaltColumnProp(column?: ColumnProps) {
+  const config = deepClone(column)
+  delete config?.children
   return {
-    ...column,
-    align: column?.align ?? 'center',
-    showOverflowTooltip: column?.showOverflowTooltip ?? true,
+    ...config,
+    align: config?.align ?? 'center',
+    showOverflowTooltip: config?.showOverflowTooltip ?? true,
   }
 }
