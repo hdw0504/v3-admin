@@ -19,9 +19,9 @@
     {
       "path": "/other",
       "name": "other",
-      "redirect": "/other/communication",
+      "redirect": "/other/comment",
       "meta": {
-        "icon": "Histogram",
+        "icon": "Document",
         "title": "其他",
         "isLink": "",
         "isHide": false,
@@ -31,11 +31,11 @@
       },
       "children": [
         {
-          "path": "/other/communication",
-          "name": "communication",
-          "component": "/other/communication/index",
+          "path": "/other/comment",
+          "name": "Comment",
+          "component": "/other/comment/index",
           "meta": {
-            "icon": "Histogram",
+            "icon": "Comment",
             "title": "组件通信",
             "isLink": "",
             "isHide": false,
@@ -63,7 +63,7 @@
           "name": "canvas",
           "component": "/other/canvas/index",
           "meta": {
-            "icon": "picture",
+            "icon": "Picture",
             "title": "canvas",
             "isLink": "",
             "isHide": false,
@@ -123,7 +123,7 @@
       "name": "table",
       "redirect": "/table/default",
       "meta": {
-        "icon": "picture",
+        "icon": "List",
         "title": "table 表格",
         "isLink": "",
         "isHide": false,
@@ -137,8 +137,8 @@
           "name": "tableDefault",
           "component": "/table/default/index",
           "meta": {
-            "icon": "picture",
-            "title": "基础表格",
+            "icon": "SetUp",
+            "title": "配置化 table",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -167,7 +167,7 @@
         "name": "github",
         "component": "/link/github/index",
         "meta": {
-          "icon": "Menu",
+          "icon": "Share",
           "title": "GitHub 仓库",
           "isLink": "https://github.com/hdw0504/v3-admin",
           "isHide": false,
