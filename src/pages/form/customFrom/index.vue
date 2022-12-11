@@ -119,9 +119,9 @@ const model = ref<Record<string, any>>({
 
 <template>
   <div class="card-full">
-    <div mb-4>
+    <!-- <div mb-4>
       <el-alert title="使用 <component is='xxx' /> 简单实现自定义表单，具体逻辑查阅代码" type="warning" :closable="false" />
-    </div>
+    </div> -->
     <ELFormPro :value="model" :form="form" :components="components">
       <template #inp-prepend>
         Http://
