@@ -16,21 +16,21 @@ const handleClickMenu = (subItem: Menu.MenuOptions) => {
   <template v-for="subItem in menuList" :key="subItem.path">
     <el-sub-menu v-if="subItem.children && subItem.children.length > 0" :index="subItem.path">
       <template #title>
-        <Icon mr-2 :icon="`ep:${hump2line(subItem.meta.icon)}`" />
-        <!-- <el-icon>
-          <component :is="elPlusIconsDict[subItem.meta.icon]" />
-        </el-icon> -->
-        <span>{{ subItem.meta.title }}</span>
+        <el-icon>
+          <Icon :icon="`ep:${hump2line(subItem.meta.icon)}`" />
+          <!-- <component :is="elPlusIconsDict[subItem.meta.icon]" /> -->
+        </el-icon>
+        <span ml-2>{{ subItem.meta.title }}</span>
       </template>
       <SubMenu :menu-list="subItem.children" />
     </el-sub-menu>
     <el-menu-item v-else :index="subItem.path" @click="handleClickMenu(subItem)">
-      <!-- <el-icon>
-        <component :is="elPlusIconsDict[subItem.meta.icon]" />
-      </el-icon> -->
-      <Icon mr-2 :icon="`ep:${hump2line(subItem.meta.icon)}`" />
+      <el-icon>
+        <!-- <component :is="elPlusIconsDict[subItem.meta.icon]" /> -->
+        <Icon :icon="`ep:${hump2line(subItem.meta.icon)}`" />
+      </el-icon>
       <template #title>
-        <span>{{ subItem.meta.title }}</span>
+        <span ml-2>{{ subItem.meta.title }}</span>
       </template>
     </el-menu-item>
   </template>
