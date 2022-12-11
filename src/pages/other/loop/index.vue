@@ -42,9 +42,9 @@ function renderItem(column: Item): () => VNode {
 function maxDepth(arr: MaybeRef<Item[]>, max = 0): number {
   return unref(arr).reduce((prev, cur) => {
     if (cur.children)
-      return Math.max(maxDepth(cur.children, max + 1), max)
+      return Math.max(maxDepth(cur.children, max + 1), prev, max)
 
-    return prev
+    return Math.max(prev, max)
   }, 0)
 }
 
