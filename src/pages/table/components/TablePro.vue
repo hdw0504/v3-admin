@@ -1,7 +1,8 @@
-<script setup lang="tsx">
+<script setup lang="ts">
 import type { TableProps } from 'element-plus'
 import { commonIcons, defaltColumnProp } from './config'
 import type { ColumnProps, OperationProps } from './types'
+import ColumnPro from './ColumnPro.vue'
 import { isArray, isString } from '@/utils/is'
 
 interface Props<T = any> extends TableProps<T> {
@@ -48,20 +49,24 @@ function opIcon(icon: OperationProps['icon']) {
 
     <!-- 单选和多选 -->
     <el-table-column
-      v-if="selection" :type="selection === 'single' ? 'index' : 'selection'"
+      v-if="selection" width="50px" :type="selection === 'single' ? 'index' : 'selection'"
       v-bind="defaltColumnProp()"
     />
 
     <!-- 扩展 -->
-    <el-table-column v-if="expand" v-slot="scope" type="expand" label="#" v-bind="defaltColumnProp()">
+    <el-table-column
+      v-if="expand" v-slot="scope" width="50px" type="expand"
+      label="#" v-bind="defaltColumnProp()"
+    >
       <slot name="expand" v-bind="scope" />
     </el-table-column>
+    <!-- <template v-for="column in columns" :key="column">
+      <ColumnPro :column="column" />
+    </template> -->
 
     <!-- 配置 -->
     <template v-for="column in columns" :key="column.prop">
-      <!-- 其他 && 按钮 -->
       <el-table-column v-bind="defaltColumnProp(column)">
-        <!-- header -->
         <template #header="scope">
           <template v-if="$slots[`${column.prop}Header`]">
             <slot :name="`${column.prop}Header`" v-bind="scope" />
@@ -71,9 +76,7 @@ function opIcon(icon: OperationProps['icon']) {
           </template>
         </template>
 
-        <!-- default -->
         <template #default="scope">
-          <!-- not op -->
           <template v-if="column.prop !== 'operation'">
             <template v-if="$slots[column.prop!]">
               <slot :name="column.prop" v-bind="scope" />
@@ -84,7 +87,6 @@ function opIcon(icon: OperationProps['icon']) {
             </template>
           </template>
 
-          <!-- has op -->
           <template v-else-if="isArray(operation)">
             <template v-for="op in operation" :key="op.label">
               <el-button

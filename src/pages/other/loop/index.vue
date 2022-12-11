@@ -1,5 +1,6 @@
 <script setup lang="tsx">
 import type { MaybeRef } from '@vueuse/core'
+import type { VNode } from 'vue'
 import { isArray } from '@/utils/is'
 
 interface Item {
@@ -19,11 +20,11 @@ function appendChild(column: Item) {
   })
 }
 
-function renderColumn(columns: Item[]) {
+function renderColumn(columns: Item[]): () => VNode[] {
   return () => columns.map(col => h(renderItem(col)))
 }
 
-function renderItem(column: Item) {
+function renderItem(column: Item): () => VNode {
   return () => <>
         <div class='card max-h-none! flex flex-col gap-4'>
             <div>
