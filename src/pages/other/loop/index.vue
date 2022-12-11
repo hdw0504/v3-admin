@@ -45,16 +45,16 @@ function maxDepth(arr: MaybeRef<Item[]>, max = 0): number {
       return Math.max(maxDepth(cur.children, max + 1), prev, max)
 
     return Math.max(prev, max)
-  }, 0)
+  }, max)
 }
 
-const popoverWidth = computed(() => Math.max(maxDepth(arr) + 4, 5) * 50)
+const popoverWidth = computed(() => Math.max(maxDepth(arr) + 3, 5) * 50)
 </script>
 
 <template>
   <div class="card-full">
     <p mb-2>
-      使用 jsx 实现递归组件
+      使用 jsx 实现递归组件, 当前最大深度为 {{ maxDepth(arr) }}
       <el-popover placement="bottom" trigger="click" :width="popoverWidth">
         <template #reference>
           <el-button> 数据 </el-button>
