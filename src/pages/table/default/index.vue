@@ -116,6 +116,10 @@ const operation: OperationProps<User.ResUserList>[] = [
 ]
 
 const selectColumns = ref(defaltColumns)
+// const selectAll = ref(true)
+// watchEffect(() => {
+//   selectAll.value = selectColumns.value.length === columns.length
+// })
 const selectAll = computed({
   get: () => selectColumns.value.length === columns.length,
   set: () => {}, // computed 默认只读
