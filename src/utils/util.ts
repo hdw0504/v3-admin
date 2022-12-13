@@ -1,3 +1,4 @@
+import { deepClone } from './object'
 import { isArray } from '@/utils/is'
 
 /**
@@ -140,7 +141,7 @@ export function getBrowserLang() {
  * @description 递归查询当前路由所对应的路由
  * @param {Array} menuList 所有菜单列表
  * @param {String} path 当前访问地址
- * @return array
+ * @return Menu.MenuOptions
  */
 export function filterCurrentRoute(menuList: Menu.MenuOptions[], path: string) {
   let result = {}
@@ -162,11 +163,10 @@ export function filterCurrentRoute(menuList: Menu.MenuOptions[], path: string) {
  * @return array
  */
 export function getFlatArr(menulist: Menu.MenuOptions[]) {
-  return menulist.reduce((pre: Menu.MenuOptions[], current: Menu.MenuOptions) => {
-    let flatArr = [...pre, current]
-    if (current.children)
-      flatArr = [...flatArr, ...getFlatArr(current.children)]
-    return flatArr
+  return menulist.reduce((prev: Menu.MenuOptions[], current: Menu.MenuOptions) => {
+    prev.push(current)
+    isArray(current.children) && prev.push(...getFlatArr(current.children))
+    return prev
   }, [])
 }
 
@@ -176,12 +176,12 @@ export function getFlatArr(menulist: Menu.MenuOptions[]) {
  * @param {Array} cacheArr 缓存的路由菜单 name ['**','**']
  * @return array
  * */
-export function getKeepAliveRouterName(menuList: Menu.MenuOptions[], keepAliveArr: string[] = []) {
-  menuList.forEach((item) => {
-    item.meta.isKeepAlive && item.name && keepAliveArr.push(item.name)
-    item.children?.length && getKeepAliveRouterName(item.children, keepAliveArr)
-  })
-  return keepAliveArr
+export function getKeepAliveRouterName(menuList: Menu.MenuOptions[]) {
+  return menuList.reduce((prev: string[], current: Menu.MenuOptions) => {
+    current.meta.isKeepAlive && current.name && prev.push(current.name)
+    isArray(current.children) && prev.push(...getKeepAliveRouterName(current.children))
+    return prev
+  }, [])
 }
 
 /**
@@ -190,11 +190,15 @@ export function getKeepAliveRouterName(menuList: Menu.MenuOptions[], keepAliveAr
  * @return array
  * */
 export function getShowMenuList(menuList: Menu.MenuOptions[]) {
-  const newMenuList: Menu.MenuOptions[] = JSON.parse(JSON.stringify(menuList))
-  return newMenuList.filter((item) => {
-    item.children?.length && (item.children = getShowMenuList(item.children))
-    return !item.meta?.isHide
-  })
+  const list = deepClone(menuList)
+  const loop = (menus: Menu.MenuOptions[]) => {
+    return menus.filter((item) => {
+      if (isArray(item.children))
+        item.children = loop(item.children)
+      return !item.meta.isHide
+    })
+  }
+  return loop(list)
 }
 
 /**
@@ -203,52 +207,26 @@ export function getShowMenuList(menuList: Menu.MenuOptions[]) {
  * @param {Array} menuPathArr 菜单地址的一维数组 ['**','**']
  * @return array
  */
-export function getMenuListPath(menuList: Menu.MenuOptions[], menuPathArr: string[] = []) {
-  menuList.forEach((item: Menu.MenuOptions) => {
-    typeof item === 'object' && item.path && menuPathArr.push(item.path)
-    item.children?.length && getMenuListPath(item.children, menuPathArr)
-  })
-  return menuPathArr
-}
-
-/**
- * @description 使用递归，过滤出当前路径匹配的面包屑地址
- * @param {String} path 当前访问地址
- * @param {Array} menuList 所有菜单列表
- * @returns array
- */
-export function getCurrentBreadcrumb(path: string, menuList: Menu.MenuOptions[]) {
-  const tempPath: Menu.MenuOptions[] = []
-  try {
-    const getNodePath = (node: Menu.MenuOptions) => {
-      tempPath.push(node)
-      if (node.path === path)
-        throw new Error('Find IT!')
-      if (node.children?.length)
-        node.children.forEach(item => getNodePath(item))
-      tempPath.pop()
-    }
-    menuList.forEach(item => getNodePath(item))
-  }
-  catch (e) {
-    return tempPath
-  }
+export function getMenuListPath(menuList: Menu.MenuOptions[]) {
+  return menuList.reduce((prev: string[], cur) => {
+    prev.push(cur.path)
+    isArray(cur.children) && prev.push(...getMenuListPath(cur.children))
+    return prev
+  }, [])
 }
 
 /**
  * @description 双重递归找出所有面包屑存储到 pinia/vuex 中
  * @param {Array} menuList 所有菜单列表
- * @returns array
+ * @returns object
  */
-export function getAllBreadcrumbList(menuList: Menu.MenuOptions[]) {
-  const handleBreadcrumbList: { [key: string]: any } = {}
-  const loop = (menuItem: Menu.MenuOptions) => {
-    if (menuItem?.children?.length)
-      menuItem.children.forEach(item => loop(item))
-    else handleBreadcrumbList[menuItem.path] = getCurrentBreadcrumb(menuItem.path, menuList)
+export function getAllBreadcrumbList(menuList: Menu.MenuOptions[], result: Record<string, any> = {}, path = []) {
+  for (const item of menuList) {
+    result[item.path] = [...path, item]
+    if (item.children)
+      getAllBreadcrumbList(item.children, result, result[item.path])
   }
-  menuList.forEach(item => loop(item))
-  return handleBreadcrumbList
+  return result
 }
 
 /**
