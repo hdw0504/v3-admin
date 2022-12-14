@@ -15,17 +15,17 @@ const props = withDefaults(defineProps<Props>(), {
   text: 'text',
 })
 const emit = defineEmits<Emits>()
-const initName = 'name'
-const initText = 'text'
 
 const inputChange = (e: string | number) => {
   emit('update:modelValue', e)
 }
 
+const initName = 'name'
 const changeName = () => {
   emit('update:name', props.name === initName ? 'new name' : initName)
 }
 
+const initText = 'text'
 const changeText = () => {
   emit('textChange', props.text === initText ? 'new text' : initText)
 }
