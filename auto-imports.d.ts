@@ -25,6 +25,7 @@ declare global {
   const ElRate: typeof import('element-plus/es')['ElRate']
   const ElSelect: typeof import('element-plus/es')['ElSelect']
   const ElSwitch: typeof import('element-plus/es')['ElSwitch']
+  const ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
   const ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
   const ElTimeSelect: typeof import('element-plus/es')['ElTimeSelect']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
@@ -335,6 +336,7 @@ declare module 'vue' {
     readonly ElRate: UnwrapRef<typeof import('element-plus/es')['ElRate']>
     readonly ElSelect: UnwrapRef<typeof import('element-plus/es')['ElSelect']>
     readonly ElSwitch: UnwrapRef<typeof import('element-plus/es')['ElSwitch']>
+    readonly ElTableColumn: UnwrapRef<typeof import('element-plus/es')['ElTableColumn']>
     readonly ElTimePicker: UnwrapRef<typeof import('element-plus/es')['ElTimePicker']>
     readonly ElTimeSelect: UnwrapRef<typeof import('element-plus/es')['ElTimeSelect']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
