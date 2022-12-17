@@ -20,22 +20,17 @@ const columns: ColumnProps<User.ResUserList>[] = [
     prop: 'username',
   },
   {
-    label: '性别',
-    prop: 'gender',
-    // children: [
-    //   {
-    //     label: '性别',
-    //     prop: 'gender',
-    //   },
-    //   {
-    //     label: '年龄',
-    //     prop: 'age',
-    //   },
-    // ],
-  },
-  {
-    label: '年龄',
-    prop: 'age',
+    label: '信息',
+    children: [
+      {
+        label: '性别',
+        prop: 'gender',
+      },
+      {
+        label: '年龄',
+        prop: 'age',
+      },
+    ],
   },
   {
     label: '身份证',
@@ -115,15 +110,16 @@ const operation: OperationProps<User.ResUserList>[] = [
   },
 ]
 
+// 展示列过滤
 const selectColumns = ref(defaltColumns)
-// const selectAll = ref(true)
-// watchEffect(() => {
-//   selectAll.value = selectColumns.value.length === columns.length
-// })
-const selectAll = computed({
-  get: () => selectColumns.value.length === columns.length,
-  set: () => {}, // computed 默认只读
+const selectAll = ref(true)
+watchEffect(() => {
+  selectAll.value = selectColumns.value.length === columns.length
 })
+// const selectAll = computed({
+//   get: () => selectColumns.value.length === columns.length,
+//   set: () => {}, // computed 默认只读
+// })
 const isIndeterminate = computed(() => !!selectColumns.value.length && !selectAll.value)
 
 function handleCheckAllChange(val: CheckboxValueType) {
@@ -195,11 +191,7 @@ function colSpanMethod({ row, column, rowIndex, columnIndex }: any) {
             <el-button> 展示列 </el-button>
           </template>
           <div>
-            <el-checkbox
-              v-model="selectAll"
-              :indeterminate="isIndeterminate"
-              @change="handleCheckAllChange"
-            >
+            <el-checkbox v-model="selectAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange">
               全选
             </el-checkbox>
             <el-checkbox-group v-model="selectColumns">

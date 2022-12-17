@@ -10,17 +10,20 @@ export interface ColumnProps<T = any> extends elTableColumnProps {
   children?: ColumnProps<T>[]
 }
 
+export interface HeaderScope<T = any> {
+  column: TableColumnCtx<T>
+  $index: number
+}
+
+export interface RowScope<T = any> {
+  row: T
+  column: TableColumnCtx<T>
+  $index: number
+}
+
 export interface OperationProps<T = any> {
   label?: any
   icon: columnIcons
-  visible?: ({ row, column, $index }: {
-    row: T
-    column: TableColumnCtx<T>
-    $index: number
-  }) => boolean
-  action: ({ row, column, $index }: {
-    row: T
-    column: TableColumnCtx<T>
-    $index: number
-  }) => any
+  visible?: ({ row, column, $index }: RowScope<T>) => boolean
+  action: ({ row, column, $index }: RowScope<T>) => any
 }

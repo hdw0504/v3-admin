@@ -1,4 +1,4 @@
-import type { FunctionalComponent, SVGAttributes } from 'vue'
+import type { FunctionalComponent, InjectionKey, SVGAttributes, Slots } from 'vue'
 import type { ColumnProps } from './types'
 import ElView from '~icons/ep/view'
 import ElEditPen from '~icons/ep/edit-pen'
@@ -7,6 +7,7 @@ import ElCheck from '~icons/ep/check'
 import ElClose from '~icons/ep/close'
 import { deepClone } from '@/utils/object'
 
+// 常用操作的 logo
 export const commonIcons = {
   detail: ElView,
   edit: ElEditPen,
@@ -26,3 +27,6 @@ export function defaltColumnProp(column?: ColumnProps) {
     showOverflowTooltip: config?.showOverflowTooltip ?? true,
   }
 }
+
+// 爷孙传参 插槽
+export const slotKey: InjectionKey<Slots> = Symbol('slotsKey')

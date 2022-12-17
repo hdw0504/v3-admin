@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TableProps } from 'element-plus'
-import { commonIcons, defaltColumnProp } from './config'
+import { commonIcons, defaltColumnProp, slotKey } from './config'
 import type { ColumnProps, OperationProps } from './types'
 import ColumnPro from './ColumnPro.vue'
 import { isArray, isString } from '@/utils/is'
@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const attrs = useAttrs()
 const slots = useSlots()
+provide(slotKey, { ...slots })
 console.log({ props, attrs, slots })
 
 // 操作按钮
@@ -60,46 +61,24 @@ function opIcon(icon: OperationProps['icon']) {
     >
       <slot name="expand" v-bind="scope" />
     </el-table-column>
-    <!-- <template v-for="column in columns" :key="column">
-      <ColumnPro :column="column" />
-    </template> -->
 
-    <!-- 配置 -->
-    <template v-for="column in columns" :key="column.prop">
-      <el-table-column v-bind="defaltColumnProp(column)">
-        <template #header="scope">
-          <template v-if="$slots[`${column.prop}Header`]">
-            <slot :name="`${column.prop}Header`" v-bind="scope" />
-          </template>
-          <template v-else>
-            {{ column.label }}
-          </template>
-        </template>
-
-        <template #default="scope">
-          <template v-if="column.prop !== 'operation'">
-            <template v-if="$slots[column.prop!]">
-              <slot :name="column.prop" v-bind="scope" />
-            </template>
-
-            <template v-else>
-              {{ scope.row[column.prop!] ?? '--' }}
-            </template>
-          </template>
-
-          <template v-else-if="isArray(operation)">
-            <template v-for="op in operation" :key="op.label">
-              <el-button
-                v-if="op.visible ? op.visible(scope) : true"
-                type="primary" link :icon="opIcon(op.icon)"
-                @click="op.action(scope)"
-              >
-                {{ op.label }}
-              </el-button>
-            </template>
+    <!-- 其余 -->
+    <template v-for="column in columns" :key="column">
+      <!-- 封装el-column使实现多重表头 -->
+      <ColumnPro v-slot="scope" :column="column">
+        <!-- 操作按钮 -->
+        <template v-if="isArray(operation)">
+          <template v-for="op in operation" :key="op.label">
+            <el-button
+              v-if="op.visible ? op.visible(scope) : true"
+              type="primary" link :icon="opIcon(op.icon)"
+              @click="op.action(scope)"
+            >
+              {{ op.label }}
+            </el-button>
           </template>
         </template>
-      </el-table-column>
+      </ColumnPro>
     </template>
   </el-table>
 </template>
