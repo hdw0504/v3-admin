@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TabsPaneContext } from 'element-plus'
+import type { TabPaneName, TabsPaneContext } from 'element-plus'
 import { Icon } from '@iconify/vue'
 import { GlobalStore } from '@/stores'
 import { TabsStore } from '@/stores/modules/tabs'
@@ -38,8 +38,8 @@ const tabClick = (tabItem: TabsPaneContext) => {
 }
 
 // Remove Tab
-const tabRemove = (activeTabPath: string) => {
-  tabStore.removeTabs(activeTabPath, activeTabPath === route.path)
+const tabRemove = (activeTabPath: TabPaneName) => {
+  tabStore.removeTabs(activeTabPath as string, activeTabPath === route.path)
 }
 
 const reload = () => {

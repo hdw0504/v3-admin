@@ -1,9 +1,9 @@
 import type { TableColumnCtx } from 'element-plus'
 import type { columnIcons } from './config'
 
-type elTableColumnProps<T = any> = Partial<Omit<TableColumnCtx<T>, 'children'>>
+type ElTableColumnProps<T = any> = Partial<Omit<TableColumnCtx<T>, 'children'>>
 // 需要先在原来的TableColumnCtx排除后重写
-export interface ColumnProps<T = any> extends elTableColumnProps {
+export interface ColumnProps<T = any> extends ElTableColumnProps {
   prop?: 'selection' | 'expand' | 'index' | 'operation' | string
   label?: string
   // overwrite column config

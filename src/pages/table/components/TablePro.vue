@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 const attrs = useAttrs()
 const slots = useSlots()
 provide(slotKey, { ...slots })
+// eslint-disable-next-line no-console
 console.log({ props, attrs, slots })
 
 // 操作按钮
