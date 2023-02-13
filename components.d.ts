@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     404: typeof import('./src/components/ErrorMessage/404.vue')['default']
     500: typeof import('./src/components/ErrorMessage/500.vue')['default']
     ConnectLine: typeof import('./src/components/ConnectLine.vue')['default']
+    ContextMenu: typeof import('./src/components/ContextMenu.vue')['default']
     ElAlert: typeof import('element-plus/es')['ElAlert']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
@@ -66,10 +67,12 @@ declare module '@vue/runtime-core' {
     IIconsTest: typeof import('~icons/icons/test')['default']
     IMdiAccount: typeof import('~icons/mdi/account')['default']
     LazyImage: typeof import('./src/components/LazyImage.vue')['default']
+    LineClamp: typeof import('./src/components/LineClamp/index.vue')['default']
     Loading: typeof import('./src/components/LoadPage/Loading.vue')['default']
     LoadPage: typeof import('./src/components/LoadPage/index.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Undefined: typeof import('./src/components/index.vue')['default']
   }
 }

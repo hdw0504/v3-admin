@@ -105,7 +105,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         ],
       }),
 
-      // https://github.com/antfu/vite-plugin-components
+      // https://github.com/antfu/unplugin-vue-components
       Components({
         dts: true,
         include: [/\.vue$/, /\.vue\?vue/, /\.vue\?v=/, /\.[jt]sx$/],
